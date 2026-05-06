@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wheelchair Accessibility Map - Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0064fa",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0f1723",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.1);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        body {
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNDQwIDk2MCI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJnMSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0icmdiYSgwLDEwMCwyNTAsMSkiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9InJnYmEoMTUsMjMsMzUsMSkiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iMTQ0MCIgaGVpZ2h0PSI5NjAiIGZpbGw9InVybCgjZzEpIi8+PC9zdmc+');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="font-display">
+<div class="relative flex min-h-screen w-full flex-col bg-background-dark/80 group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="flex flex-1 items-center justify-center p-4 sm:p-6 lg:p-8">
+<div class="layout-content-container flex flex-col w-full max-w-md">
+<div class="glassmorphism rounded-xl shadow-lg p-8">
+<div class="flex flex-col gap-6">
+<div class="text-center">
+<p class="text-white text-3xl sm:text-4xl font-black leading-tight tracking-[-0.033em]">Welcome to Wheelchair Accessibility Map</p>
+<p class="text-gray-300 text-base font-normal leading-normal mt-2">Please sign in to continue</p>
+</div>
+<div class="flex flex-col gap-4">
+<label class="flex flex-col">
+<p class="text-white text-base font-medium leading-normal pb-2">Email</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-white focus:outline-0 focus:ring-2 focus:ring-primary border-none bg-black/20 focus:border-none h-14 placeholder:text-gray-400 p-4 text-base font-normal leading-normal" placeholder="Enter your email" type="email"/>
+</label>
+<label class="flex flex-col">
+<p class="text-white text-base font-medium leading-normal pb-2">Password</p>
+<div class="flex w-full flex-1 items-stretch rounded-xl">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-l-xl text-white focus:outline-0 focus:ring-2 focus:ring-primary border-none bg-black/20 focus:border-none h-14 placeholder:text-gray-400 p-4 pr-2 text-base font-normal leading-normal" placeholder="Enter your password" type="password"/>
+<div class="text-gray-400 flex border-none bg-black/20 items-center justify-center pr-4 rounded-r-xl">
+<span class="material-symbols-outlined" style="font-size: 24px;">visibility</span>
+</div>
+</div>
+</label>
+</div>
+<button class="flex min-w-[84px] w-full cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<span class="truncate">Log In</span>
+</button>
+<p class="text-gray-300 text-base font-normal leading-normal text-center">or</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="flex flex-1 items-center justify-center gap-2 rounded-xl h-12 px-5 bg-white/10 text-white hover:bg-white/20 transition-colors">
+<img class="h-6 w-6" data-alt="Google logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUKH2mAZw2cScxTSD9AX8ziErwwZTMz_sfY2sao6rCtAL-A5y9cHfJVLHRaCEDqgPKLwehEuo0mOUdqPgqusADZLPIsK_6AokBUzokYVrQeD7i9kPPtAMCFN091t7L4HK119U7eJqbe4NEb9v8URneg5QFAawrxg077iI0M5ZvVCijkDzSopEuCQRNurvkXMDD5T7Z-W-yXkk_RElvoEUuSM3ncr_nxxQC_FS5bXCnBkFUXGACyYp2Sx6tL5zHndRdbav62YNn9QA"/>
+<span>Sign in with Google</span>
+</button>
+<button class="flex flex-1 items-center justify-center gap-2 rounded-xl h-12 px-5 bg-white/10 text-white hover:bg-white/20 transition-colors">
+<img class="h-6 w-6" data-alt="Facebook logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALf962XQlRgjMeL6K3ykp-ui3JSFkXNTR1g_JnJQixaBdI9HOHOds7ePjFGtsNgHJQrfT-Z3w53sf5FR1d6DA0zRV7CCAtuaaHQKHFDGdJF59tzZOmD57Ya_Oi0zlOeH7Y71JzWQL0PdGYaeICoOv0y4VW0x_OtenKsm2c71l5x8HanPthXRBOlXiqg58tYu8xO5mJixpAnGF9LPA9xC8pVE4V2AvVaHxOGhknLF_rRTQ8XenyWgJNGAldkbD4QuWxJ8VJOtAEVv4"/>
+<span>Sign in with Facebook</span>
+</button>
+</div>
+<p class="text-center text-gray-300">
+                                New user? <a class="font-medium text-primary hover:underline" href="#">Sign up</a>
+</p>
+</div>
+</div>
+<footer class="mt-8 text-center text-gray-400 text-sm">
+<a class="hover:underline" href="#">Privacy Policy</a> • <a class="hover:underline" href="#">Terms of Service</a> • <a class="hover:underline" href="#">Accessibility Statement</a>
+</footer>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Emergency Assistance</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+    .aurora-gradient {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        radial-gradient(ellipse at 20% 80%, rgba(53, 9, 135, 0.3) 0%, transparent 70%),
+        radial-gradient(ellipse at 80% 20%, rgba(9, 68, 135, 0.3) 0%, transparent 70%),
+        radial-gradient(ellipse at 50% 50%, rgba(135, 9, 9, 0.2) 0%, transparent 70%);
+      animation: aurora 12s ease-in-out infinite;
+      z-index: 0;
+    }
+
+    @keyframes aurora {
+      0% {
+        background-position: 0% 50%, 50% 50%, 100% 50%;
+      }
+      50% {
+        background-position: 100% 50%, 0% 50%, 50% 50%;
+      }
+      100% {
+        background-position: 0% 50%, 50% 50%, 100% 50%;
+      }
+    }
+    .pulse-animation {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(249, 6, 6, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 40px rgba(249, 6, 6, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(249, 6, 6, 0);
+      }
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#f90606",
+            "background-light": "#f8f5f5",
+            "background-dark": "#181111",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="font-display bg-background-dark text-white">
+<div class="relative flex min-h-screen w-full flex-col items-center justify-center p-4 sm:p-6 lg:p-8 overflow-hidden">
+<div class="aurora-gradient"></div>
+<div class="relative z-10 flex w-full max-w-md flex-col items-center justify-center space-y-8">
+<!-- Header -->
+<div class="text-center">
+<p class="text-4xl font-black leading-tight tracking-[-0.033em]">Emergency Assistance</p>
+<p class="text-gray-400 text-base font-normal leading-normal mt-2">Press and hold the button below to request immediate assistance.</p>
+</div>
+<!-- Pulsing SOS Button -->
+<div class="flex items-center justify-center w-64 h-64">
+<button class="flex items-center justify-center w-48 h-48 rounded-full bg-primary text-white text-2xl font-bold leading-normal tracking-[0.015em] focus:outline-none focus:ring-4 focus:ring-primary/50 pulse-animation">
+          Request Help
+        </button>
+</div>
+<!-- Staff Availability -->
+<div class="w-full rounded-lg bg-white/10 backdrop-blur-md p-4 text-center border border-white/20">
+<p class="text-sm font-normal leading-normal">No staff are currently available. We can notify your emergency contacts.</p>
+</div>
+<!-- Emergency Contacts -->
+<div class="w-full space-y-4">
+<p class="text-center text-gray-300">Select contacts to notify or call local emergency services.</p>
+<div class="w-full rounded-lg bg-white/10 backdrop-blur-md border border-white/20 divide-y divide-white/20">
+<div class="flex items-center gap-4 px-4 min-h-[72px] py-2 justify-between">
+<div class="flex items-center gap-4">
+<img class="rounded-full h-14 w-14 object-cover" data-alt="A portrait of a woman with short brown hair." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVg1akXjfDye0pY5P0MAga1Lya9fyKXaotkMGP_Zbqt9cE975Ktvs1ej1jDPf9pxQMkQxLOMtt8n5kkshqz3gpvoH2x-5K3zDqQW_CLlIYzlyl0wSa578wh2OEsuHfG8IwvabJ0O3Rl0oLoYRwwUuacN-WZtOhhGN55QgKbmhU9AuZXigs-4SS2eZdTvrDeEsrBhZiEdxTuTvQwHEBPKlD5I-ZcmN7rQq_oFmSQD1v8RIDO7ywJFfnjB-B88fipw-e6MNJiQPdMtA"/>
+<div class="flex flex-col justify-center">
+<p class="text-white text-base font-medium leading-normal line-clamp-1">Jane Doe</p>
+<p class="text-gray-400 text-sm font-normal leading-normal line-clamp-2">Spouse</p>
+</div>
+</div>
+<div class="shrink-0">
+<div class="flex size-7 items-center justify-center">
+<input class="h-5 w-5 rounded border-gray-500 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0 focus:border-gray-400" type="checkbox"/>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 px-4 min-h-[72px] py-2 justify-between">
+<div class="flex items-center gap-4">
+<img class="rounded-full h-14 w-14 object-cover" data-alt="A portrait of a man with a beard and glasses." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_F-5vbkHCn3Lvn6H7wVuVUyUgYXAaCDkjqA5GciOzm_Np0VmQvd_jGlO6gnJ0XS8NbrDr7IBvHAI4e6qBxmgXrQuC6g6QpjECywT3D32VMAfBWyN0fIPIlVBH_lisbu63XI_Wzuwt8MJpX59DC69nhBWFsddu-gZdS5YwUidf-yRqdiaFoUxdwBa2re8hR_sxhIzrjY4d_0JbLVzLQBgxwWudXgyzznFSAEu2gK1Vlg0jfSLLjqwLsUXPTHJMn2kwCGUM4URiZdQ"/>
+<div class="flex flex-col justify-center">
+<p class="text-white text-base font-medium leading-normal line-clamp-1">John Smith</p>
+<p class="text-gray-400 text-sm font-normal leading-normal line-clamp-2">Friend</p>
+</div>
+</div>
+<div class="shrink-0">
+<div class="flex size-7 items-center justify-center">
+<input class="h-5 w-5 rounded border-gray-500 border-2 bg-transparent text-primary checked:bg-primary checked:border-primary focus:ring-0 focus:ring-offset-0 focus:border-gray-400" type="checkbox"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="w-full flex flex-col sm:flex-row gap-4">
+<button class="flex-1 flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-5 bg-white/20 backdrop-blur-md text-white text-base font-bold leading-normal tracking-[0.015em] border border-white/30">
+<span class="material-symbols-outlined mr-2">phone</span>
+<span>Call 122</span>
+</button>
+<button class="flex-1 flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em]">
+<span>Notify Contacts</span>
+</button>
+</div>
+<!-- Cancel Button -->
+<button class="text-gray-400 hover:text-white transition-colors duration-200">Cancel</button>
+</div>
+</div>
+</body></html>

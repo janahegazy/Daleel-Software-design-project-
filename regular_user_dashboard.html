@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wheelchair Accessibility Map - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<style>
+        .aurora-gradient {
+            background-image: radial-gradient(at 27% 37%, hsla(215, 98%, 61%, 0.1) 0px, transparent 50%), radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 0.1) 0px, transparent 50%), radial-gradient(at 52% 99%, hsla(355, 98%, 76%, 0.1) 0px, transparent 50%), radial-gradient(at 10% 29%, hsla(256, 96%, 68%, 0.1) 0px, transparent 50%), radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 0.1) 0px, transparent 50%), radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 0.1) 0px, transparent 50%), radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 0.1) 0px, transparent 50%);
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#0064fa",
+              "background-light": "#f5f7f8",
+              "background-dark": "#0f1723",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background-dark font-display">
+<div class="relative flex min-h-screen w-full">
+<!-- Sidebar -->
+<aside class="w-64 flex-shrink-0 bg-[#101418] p-4">
+<div class="flex flex-col gap-8">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-3xl">accessible</span>
+<span class="text-white text-xl font-bold">Wheelchair Map</span>
+</div>
+<div class="flex flex-col gap-4">
+<div class="flex gap-3 items-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" data-alt="User avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD_dfDFDAA-6pvUixfcjBobhPeMLA1og92BSwb0xYxunAA8yUyYqdqsa9X_f05n5qBY8PLhUL92tmSJqmyqV3JfIAjH9ZXzXG5bP4rT7gX21X4ueH-VA6Nhd3PZk1CLVNQT6njMfkJJ-uHygnTq_vEGYLvXxrs9sg_am7f44vdb9zHqKN7CmEETRbR-5LlVcKT7VrSIv8bE9S9LPmMci6YquKEESskW4e_Y8SnYj6jfxqdFSte3ZznWeXe5ESHDpgp4J-E6f2taMjM");'></div>
+<div class="flex flex-col">
+<h1 class="text-white text-base font-medium leading-normal">Alex Doe</h1>
+<p class="text-[#9aa7bc] text-sm font-normal leading-normal">alex.doe@example.com</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2 mt-4">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-[#272f3a]" href="#">
+<span class="material-symbols-outlined text-white">dashboard</span>
+<p class="text-white text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#272f3a]/80" href="#">
+<span class="material-symbols-outlined text-white">map</span>
+<p class="text-white text-sm font-medium leading-normal">Map</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#272f3a]/80" href="#">
+<span class="material-symbols-outlined text-white">explore</span>
+<p class="text-white text-sm font-medium leading-normal">Explore</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-[#272f3a]/80" href="#">
+<span class="material-symbols-outlined text-white">settings</span>
+<p class="text-white text-sm font-medium leading-normal">Settings</p>
+</a>
+</nav>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-8 bg-background-dark aurora-gradient">
+<!-- Header -->
+<header class="flex justify-between items-center mb-8">
+<div class="flex flex-col gap-1">
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">Welcome back, Alex!</h1>
+<p class="text-[#9aa7bc] text-base font-normal leading-normal">You've helped 2,587 people find accessible places.</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-96">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full">
+<div class="text-[#9aa7bc] flex border-none bg-[#1c2431]/80 backdrop-blur-sm items-center justify-center pl-4 rounded-l-xl border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-xl text-white focus:outline-0 focus:ring-0 border-none bg-[#1c2431]/80 backdrop-blur-sm focus:border-none h-full placeholder:text-[#9aa7bc] px-4 text-base font-normal leading-normal" placeholder="Search for accessible locations" value=""/>
+</div>
+</label>
+</div>
+<button class="relative p-2 rounded-full bg-[#1c2431]/80 backdrop-blur-sm text-white">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-pink-400 opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-pink-500"></span>
+</span>
+</button>
+</div>
+</header>
+<!-- Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Left Column -->
+<div class="lg:col-span-2 flex flex-col gap-6">
+<!-- My Contributions -->
+<div class="bg-[#1c2431]/50 backdrop-blur-md border border-white/10 rounded-xl p-6">
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] mb-4">My Contributions</h2>
+<div class="flex flex-wrap gap-4">
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 bg-[#272f3a]/60 border border-[#394556]">
+<p class="text-[#9aa7bc] text-base font-medium leading-normal">Reviews</p>
+<p class="text-white tracking-light text-3xl font-bold leading-tight">128</p>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 bg-[#272f3a]/60 border border-[#394556]">
+<p class="text-[#9aa7bc] text-base font-medium leading-normal">Photos</p>
+<p class="text-white tracking-light text-3xl font-bold leading-tight">256</p>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-xl p-6 bg-[#272f3a]/60 border border-[#394556]">
+<p class="text-[#9aa7bc] text-base font-medium leading-normal">Ratings</p>
+<p class="text-white tracking-light text-3xl font-bold leading-tight">512</p>
+</div>
+</div>
+</div>
+<!-- Saved Locations -->
+<div class="bg-[#1c2431]/50 backdrop-blur-md border border-white/10 rounded-xl p-6">
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] mb-4">Saved Locations</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="bg-[#272f3a]/60 rounded-lg p-4 flex items-center gap-4">
+<img class="w-16 h-16 rounded-md object-cover" data-alt="Luxury hotel entrance with ramp access" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHDQU7F-ljBPCGhdPH0f4hIq_0d-A4bXyQwmuyD42qDGbFhNyLut8gWJqRMNMdAYsMOIhdNGD8yUta1FBG_JEkd3-YbKnuZYe0ZkKg75Rd8B5MqcPPeBtcxi1ronPWdXISD9K1IcrGFeGalBRXpafMNRof1ctjfIEL2Cl7U0-sZRkIK6Oa6pIADkxiKpb0tkK5tUUJ6TSWA-LsmtusSSTUC2k9vdNWpUsS7njleoe3hpTBTENw-Z8tKbwL-audnt1xAzOoxUFHXvA"/>
+<div>
+<h3 class="text-white font-semibold">Grand Hyatt Hotel</h3>
+<p class="text-sm text-[#9aa7bc]">Dubai, UAE</p>
+</div>
+</div>
+<div class="bg-[#272f3a]/60 rounded-lg p-4 flex items-center gap-4">
+<img class="w-16 h-16 rounded-md object-cover" data-alt="Modern restaurant interior with spacious layout" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8MKvR5N9QO-ArujDnbsCG0ig6JyuljgTgIDdnZLg5o32Qk2MTGRV-bE1grunnevJUdkxyaDN-iDXD6Udyxo5bMgD-Q8_60VzDXPnWR-MnKI-wocOMKwuNE3URi1tsXQ8CEr0l6FWphufF5IGk-7rJNbdUiqmcQCT9kLoi8Y4-ND0_VwTzyrhTX_44D9motkMsSCZ5gHa_VJinoiqNx9Sm9TcK9VmehgT5Xv4zR6GTHByOlcMSZFuV00XHkvno8hgq7M4wLBVjdq4"/>
+<div>
+<h3 class="text-white font-semibold">The Modernist Cafe</h3>
+<p class="text-sm text-[#9aa7bc]">New York, USA</p>
+</div>
+</div>
+<div class="bg-[#272f3a]/60 rounded-lg p-4 flex items-center gap-4">
+<img class="w-16 h-16 rounded-md object-cover" data-alt="Public library exterior with accessible pathway" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfejmHboGGArqQR3XYDaBdGNnTNrodgnrj_ILlId-RZMFLToacxPNhuzCEYsZ7GKGlGxOSiK0qYQraYJujN7drYCrWjtWhwsitbAMk5J2pNjOOu_RRwE7ne0Zl2X7ScdMBD6a2MExueh60HglEokn8ATAc3r-zahjBp83I-mcn56MNRr-Wu_2vPJ8lAHuZ_RasSFOfRfJ395-CO0QFBmGmvIp6E2Fg7odQxcr4MagF1sK02DU1YF0GOiDekXpH0377X0QR5SNYHPE"/>
+<div>
+<h3 class="text-white font-semibold">City Central Library</h3>
+<p class="text-sm text-[#9aa7bc]">London, UK</p>
+</div>
+</div>
+<div class="bg-[#272f3a]/60 rounded-lg p-4 flex items-center gap-4">
+<img class="w-16 h-16 rounded-md object-cover" data-alt="Resort pool area with a pool lift" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2AuNfi9hoUSqsNiikxVkeejbURuWB2R32yBfx-8w6DQuKPMmk1k3Jefq3FBF7OLKcIfsjS0SktxdtG1dzKAyqQDDKzL9_S7UgBNcW2qcoSqe68nbLjg-RGDxOY9UZiFzR8vORmPUqzKMdtQpcvjreD7drdh9m1fA6DDCmnoiV4KO43onPYO2PfL0MotciXfmNlvDV9UNrKl58hgMo9NIsyL91jUZhoNCKoOCDOWjZT5X0yxww-Rz438bzojJNLenqC8-t3QCpT2E"/>
+<div>
+<h3 class="text-white font-semibold">Sunset Beach Resort</h3>
+<p class="text-sm text-[#9aa7bc]">Bali, Indonesia</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column -->
+<div class="lg:col-span-1 flex flex-col gap-6">
+<!-- Gamified Badges -->
+<div class="bg-[#1c2431]/50 backdrop-blur-md border border-white/10 rounded-xl p-6">
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] mb-4">My Badges</h2>
+<div class="flex justify-around items-center gap-4">
+<div class="flex flex-col items-center gap-2">
+<div class="w-20 h-20 rounded-full bg-gradient-to-br from-teal-400 to-blue-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">star</span>
+</div>
+<p class="text-white font-semibold text-sm">Top Contributor</p>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-20 h-20 rounded-full bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">photo_camera</span>
+</div>
+<p class="text-white font-semibold text-sm">Photo Master</p>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-20 h-20 rounded-full bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-4xl">reviews</span>
+</div>
+<p class="text-white font-semibold text-sm">Review Guru</p>
+</div>
+</div>
+</div>
+<!-- Recent Notifications -->
+<div class="bg-[#1c2431]/50 backdrop-blur-md border border-white/10 rounded-xl p-6">
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] mb-4">Recent Notifications</h2>
+<div class="space-y-4">
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-teal-500/20 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-teal-400">thumb_up</span>
+</div>
+<p class="text-sm text-[#9aa7bc]"><strong class="text-white">John S.</strong> liked your review of The Modernist Cafe.</p>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-pink-500/20 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-pink-400">comment</span>
+</div>
+<p class="text-sm text-[#9aa7bc]"><strong class="text-white">Maria G.</strong> replied to your comment on City Central Library.</p>
+</div>
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 rounded-full bg-orange-500/20 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-orange-400">workspace_premium</span>
+</div>
+<p class="text-sm text-[#9aa7bc]">You've unlocked the <strong class="text-white">"Explorer"</strong> badge! Keep it up.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Personalized Recommendations -->
+<div class="mt-6 bg-[#1c2431]/50 backdrop-blur-md border border-white/10 rounded-xl p-6">
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] mb-4">Personalized Recommendations</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="bg-[#272f3a]/60 rounded-lg overflow-hidden group">
+<img class="w-full h-40 object-cover" data-alt="Accessible park with paved pathways" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPdZERHCYgpb-NzM2Dcm9IMATTcmdrY_X77rM6fXM_G9QPSZajV3lNGgA3ujG3Z_D6w1d4XG7NdXlemEVS-dpEUJmvXYB0UiO5MTOS3TzIhZ9jm4KbuM3zontznXWef6xlI0YUd3Q42MdvxyhgepREfwD3VWouv539yFGlsucSJ87Uce1emYBUldmgLGUSapFf0OPViGfde2ntp9ptR9Hx0hTjmrKtpkD3MKyw69lSm9ogMi5OmPu5Csgt03cYdiniYb5o7XPXdVU"/>
+<div class="p-4">
+<h3 class="text-white font-semibold">Greenwood Park</h3>
+<p class="text-sm text-[#9aa7bc]">Has 3 accessible entrances and ramps.</p>
+</div>
+</div>
+<div class="bg-[#272f3a]/60 rounded-lg overflow-hidden group">
+<img class="w-full h-40 object-cover" data-alt="Art museum interior with wide hallways" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUGSyYbZqrsioXcXlobCVJtjAThhTa-lcCTnItBp0aZByOvyKzAx9slHaBqkiJYsIarnfN28LnxEFpc6Vx6_utdqARFy-agVv_hW6FwnvuBaCnu5oPEy9qvJ9lK6TDQHxX5AMbeVBdT3irJJAgifPOgIVfnG96qUhjlklsJakqRiYkfw4vHBzpdXw5b7frciHqdBlUUBDEkzD7xeRYvBC6OrAQm0RYsHh7eearifQtnM1fKxktSi2eyhFKSQ0D2vvU84RcEgi2RmI"/>
+<div class="p-4">
+<h3 class="text-white font-semibold">Museum of Art</h3>
+<p class="text-sm text-[#9aa7bc]">Elevators available for all floors.</p>
+</div>
+</div>
+<div class="bg-[#272f3a]/60 rounded-lg overflow-hidden group">
+<img class="w-full h-40 object-cover" data-alt="Hotel lobby with automatic doors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgZPBbpl2ogeOsmr3lX4Y7G1X-aMohBUNjciNs-7D_ZO16W_TXoGq09GZNTiZhPGXNuAavNcotNhYqJJgziHnKQlOwcQX9lgOk-2hlSjmS3a1HIZtCKcfPyRiJfryfkbkPWEk8ClvXg70lKtwPL_LaXKoWUClTtfX7d8p0hC2BWzBuwtjU9xP6x-3H6Uu-H6_Gq8ya_14BnE5AVCXwQy-QnjVi_BS5tTJp4JNs-LrPlwGJSkNcI3qlj-pwPXasHoirUwEiC0lx60Y"/>
+<div class="p-4">
+<h3 class="text-white font-semibold">Riverside Hotel</h3>
+<p class="text-sm text-[#9aa7bc]">Highly rated for its accessible rooms.</p>
+</div>
+</div>
+<div class="bg-[#272f3a]/60 rounded-lg overflow-hidden group">
+<img class="w-full h-40 object-cover" data-alt="Movie theater with designated wheelchair seating" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGucBCgbpS8-Q29Q1EQb7R-brwzhgByWxSPraHqn_y6SCnYExGorphg9qqmVTMOh3wXnHc4LRN0ec77g8ijIf87GaPyOeJ4bD1PVNdGUlfPezhaiSoioqQLfMtkZnELVL5lETsyUPrrZoffdnTm8YwFKR1r8fmMeTe5XWMWnUuTIHhQyjIzYQlbZaSo-vEpEA-IgXxwq-noVkwO8tNMIb0PjIewKhVrVzcgc8WXogM5sYhrrsiHb0kdv7syq8HdP8XJt8UGZgR8JY"/>
+<div class="p-4">
+<h3 class="text-white font-semibold">Galaxy Cinema</h3>
+<p class="text-sm text-[#9aa7bc]">Offers companion seating and accessible restrooms.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer -->
+<footer class="mt-8 text-center text-xs text-[#9aa7bc]">
+<p>© 2024 Wheelchair Accessibility Map. All rights reserved.</p>
+<div class="mt-2 space-x-4">
+<a class="hover:text-white" href="#">About Us</a>
+<a class="hover:text-white" href="#">Contact</a>
+<a class="hover:text-white" href="#">Privacy Policy</a>
+<a class="hover:text-white" href="#">Accessibility Statement</a>
+</div>
+</footer>
+</main>
+</div>
+</body></html>

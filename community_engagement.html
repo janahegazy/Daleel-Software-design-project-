@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wheelchair Accessibility Map - Community</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0667f9",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0f1723",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0f1723;
+        }
+        .aurora-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(ellipse at top, #1a2a45, transparent),
+                        radial-gradient(ellipse at bottom, #2c1a45, transparent);
+            animation: aurora 15s ease-in-out infinite alternate;
+        }
+        @keyframes aurora {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+    </style>
+</head>
+<body class="font-display">
+<div class="aurora-gradient"></div>
+<div class="relative flex min-h-screen w-full flex-col bg-background-light/0 dark:bg-background-dark/0 overflow-x-hidden">
+<div class="flex flex-1">
+<!-- Left Sidebar -->
+<aside class="w-1/4 max-w-[320px] min-w-[280px] p-4 bg-white/5 backdrop-blur-xl border-r border-white/10 flex flex-col gap-6">
+<!-- User Profile & Search -->
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" data-alt="User avatar image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDlkhO13zRS1TfwU_qZ5faL1Xbm599yhK2B37Y4FQmg6XrZwcmJVKsxKse6k8DN8ssUOD05VN7WXPjIPdtWk21A_vjydqbVUY0gbd8AKrEmfbd0PPTbifc8xIlSE7I-yxzwNH0asE3pLvDSw-WA2EXKMkgQnNWL9YGGlUos0fkjTUFTgUvzE-rYuFdM6IoJcDUJAbxM5ZY2_fI4XZTvOddsfk6NUe8D9u5OR59n7OqexAQvmit3mzK3IlexZx1N-iF4Fiam7FCnoOk");'></div>
+<div class="flex flex-col">
+<h1 class="text-white text-lg font-medium leading-normal">Alex Morgan</h1>
+<p class="text-gray-400 text-sm font-normal leading-normal">Online</p>
+</div>
+</div>
+<label class="flex flex-col min-w-40 h-11 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-gray-400 flex border-none bg-white/5 items-center justify-center pl-3.5 rounded-l-lg">
+<span class="material-symbols-outlined" style="font-size: 24px;">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border-none bg-white/5 focus:border-none h-full placeholder:text-gray-400 px-4 rounded-l-none pl-2 text-base font-normal leading-normal" placeholder="Search groups..."/>
+</div>
+</label>
+</div>
+<!-- Navigation Links -->
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-white hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">home</span>
+<p class="text-sm font-medium leading-normal">Home</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/30 text-white border border-primary/50" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">group</span>
+<p class="text-sm font-medium leading-normal">Groups</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-white hover:bg-white/10 transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-size: 24px;">event</span>
+<p class="text-sm font-medium leading-normal">Events</p>
+</a>
+</nav>
+<!-- Group Filters -->
+<div class="flex flex-col gap-3">
+<h2 class="text-gray-400 text-sm font-semibold px-3 uppercase tracking-wider">Filters</h2>
+<div class="flex gap-2 p-2 flex-wrap">
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white/10 pl-3 pr-3 hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined text-white" style="font-size: 20px;">campaign</span>
+<p class="text-white text-sm font-medium leading-normal">Advocacy</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white/10 pl-3 pr-3 hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined text-white" style="font-size: 20px;">groups</span>
+<p class="text-white text-sm font-medium leading-normal">Social</p>
+</button>
+<button class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white/10 pl-3 pr-3 hover:bg-white/20 transition-colors">
+<span class="material-symbols-outlined text-white" style="font-size: 20px;">public</span>
+<p class="text-white text-sm font-medium leading-normal">Local</p>
+</button>
+</div>
+</div>
+<div class="flex-grow"></div>
+<!-- Create Group Button -->
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-4 bg-primary hover:bg-primary/90 text-white text-base font-bold leading-normal tracking-wide transition-colors">
+<span class="material-symbols-outlined mr-2">add_circle</span>
+<span class="truncate">Create Group</span>
+</button>
+</aside>
+<!-- Main Content -->
+<main class="w-3/4 flex-1 p-6 overflow-y-auto">
+<div class="max-w-4xl mx-auto">
+<!-- Group Header -->
+<header class="flex flex-wrap justify-between items-center gap-4 p-4 mb-6 bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl">
+<div class="flex min-w-72 flex-col gap-2">
+<p class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">Accessibility Avengers</p>
+<p class="text-gray-300 text-base font-normal leading-normal">A group dedicated to sharing and advocating for wheelchair accessibility in our city.</p>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-white/10 hover:bg-white/20 text-white text-sm font-bold leading-normal tracking-[0.015em] transition-colors">
+<span class="material-symbols-outlined mr-2 text-sm">logout</span>
+<span class="truncate">Leave Group</span>
+</button>
+</header>
+<!-- Post Creation -->
+<div class="flex items-start px-4 py-3 gap-4 mb-6 bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 shrink-0 mt-2" data-alt="User avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC7uIYZecWTj0sHOBRdOdxr9HRJD5pGkmc5ACaYZc3bQCFTtAH3y1YbJLjPEbf2aROHXoc9nYuWZuKYVCnd220lSYmLJ6DKUX1475bhuRws4anmdRah3s9k5KIy_Av94x-DVa-t8xRFiydOVi0uYaQcgRCay0xdu1JobTp0s99ipjy4X_IpaDE9l2e2iehG4FPWjxpWi_DKuJAVmBrSUcKPkbh3ZnkJwiCyuH5yKOH6YbjJkvLvQd-kah5tCDN5osF5XL4vu_Na0qE");'></div>
+<div class="flex-1">
+<textarea class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-1 focus:ring-primary/50 border-none bg-transparent h-24 placeholder:text-gray-400 text-base font-normal leading-normal p-3" placeholder="Share your accessibility story..."></textarea>
+<div class="flex justify-between items-center mt-2 px-2">
+<div class="flex items-center gap-1">
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-gray-300" style="font-size: 22px;">image</span>
+</button>
+<button class="flex items-center justify-center p-2 rounded-full hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined text-gray-300" style="font-size: 22px;">videocam</span>
+</button>
+</div>
+<button class="min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary hover:bg-primary/90 text-white text-sm font-medium leading-normal transition-colors">
+<span class="truncate">Post</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Post Feed -->
+<div class="space-y-6">
+<!-- Event Card -->
+<div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden shadow-lg hover:shadow-primary/20 transition-shadow">
+<div class="p-5">
+<div class="flex items-center gap-3 mb-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Event organizer avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD_6mNuytEqdSPY415pG8otsNg_5Jxs70E8UuV736Qd0WO2wzjI9zy4JttrfefLEcvUVZJ9j64qlW1zsHfcSB08JousSo1ctsKwrkNW0k4uO0JYVrrZh6M6SuAKQ29V9IWFdWHZAJIUV2t-ARX-cXB_HZe_t1ZQ-hP39NVaOOStzrG1JX2nxskuCK5mr9x0ZU1vnCtYtvchaqpbBEKayRx_oEMGBhbBA4Qa3H0ZHJf4P3j82qRuVCRTff7PFBkfLn_wHvYVX74fj3o");'></div>
+<div>
+<p class="text-white font-semibold">Sarah Chen</p>
+<p class="text-gray-400 text-xs">Posted an event · 2 days ago</p>
+</div>
+</div>
+<h3 class="text-xl font-bold text-white mb-2">Downtown Accessibility Audit Walk</h3>
+<div class="text-gray-300 space-y-2 text-sm">
+<p class="flex items-center gap-2"><span class="material-symbols-outlined text-base">calendar_today</span> <span>October 26, 2025 at 2:00 PM</span></p>
+<p class="flex items-center gap-2"><span class="material-symbols-outlined text-base">location_on</span> <a class="text-primary hover:underline" href="#">City Hall Plaza</a></p>
+<p class="flex items-center gap-2"><span class="material-symbols-outlined text-base">accessible</span> <span>Ramp access, accessible restrooms available.</span></p>
+</div>
+<div class="mt-4 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-1.5 text-gray-300 hover:text-white transition-colors">
+<span class="material-symbols-outlined">thumb_up</span>
+<span class="text-sm font-medium">18</span>
+</button>
+<button class="flex items-center gap-1.5 text-gray-300 hover:text-white transition-colors">
+<span class="material-symbols-outlined">calendar_add_on</span>
+<span class="text-sm font-medium">Add to Calendar</span>
+</button>
+</div>
+<button class="text-gray-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Post Card -->
+<div class="bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl overflow-hidden shadow-lg hover:shadow-primary/20 transition-shadow">
+<div class="p-5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAoE8PfaYvWdmXM5zlwCV8Yl9D6t7JbaWUTd5JdcTDh6abAEcJKE4D7bJvsDt-meU1MCcXHK-OGnJHnFtusmib6E9lTYXMWXQagBg8b5FkPN2uMY1rlQxpUARkLvlFrmBIDB87meWtxqbiLe306jDWeFwbNRzGtMTmcN66mcoCocMvpqRKSj9sK3DpskQz6keY3Vm5Oazpa6t7rGQukpcjPoINN1bqiV9hOepcqk2YL_OxEKeV_hyZfhgP_XS7c9wdUhDo_M_-f3n0");'></div>
+<div>
+<p class="text-white font-semibold">David Lee</p>
+<p class="text-gray-400 text-xs">4 hours ago</p>
+</div>
+</div>
+<button class="text-gray-400 hover:text-white transition-colors">
+<span class="material-symbols-outlined">more_vert</span>
+</button>
+</div>
+<p class="text-gray-200 my-4">Huge success story! The new cafe on Elm Street, "The Daily Grind," just installed a permanent ramp after our group's advocacy campaign. It's spacious inside too. Highly recommend checking it out!</p>
+<img class="rounded-lg w-full h-auto object-cover max-h-80 mb-4" data-alt="Image of a cafe with a new accessibility ramp" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOcNGwzQ5GEFsGzhM39nUA3CHC65W3XeHFcXyQAQwF_qndY2jinzDD2U1dZOdKeAE4RyT24kidcg1c0BF9wx908pKwHel1rDNHRSCK7swusX_Tvnu5he3w53RKciHQeOUBE3yCUmPMQUGnp9HMvJEIjaHrKCADwa1nxywxvKU7gzWLWgmqHxMu3CQQhWBbZ_KIxZTnJYh2_U4B7DFPgl6yMG3ON-1UjSxejgw8BnVSTOmZnxzn1EiEONhBJ_RpvHCfZcKGmrhIPv8"/>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-1.5 text-white bg-primary/20 hover:bg-primary/30 px-3 py-1.5 rounded-full transition-colors">
+<span class="material-symbols-outlined text-base">thumb_up</span>
+<span class="text-sm font-medium">42</span>
+</button>
+<button class="flex items-center gap-1.5 text-gray-300 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-base">comment</span>
+<span class="text-sm font-medium">9</span>
+</button>
+</div>
+<button class="flex items-center gap-1.5 text-gray-400 hover:text-red-500 transition-colors">
+<span class="material-symbols-outlined text-base">flag</span>
+<span class="text-sm font-medium hidden md:inline">Report</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

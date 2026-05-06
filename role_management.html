@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Role Management - Wheelchair Accessibility Map</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .aurora-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at 10% 20%, rgba(138, 43, 226, 0.1), transparent 30%),
+                        radial-gradient(circle at 90% 80%, rgba(0, 255, 255, 0.1), transparent 30%),
+                        radial-gradient(circle at 50% 50%, rgba(255, 105, 180, 0.05), transparent 40%);
+            animation: aurora 20s infinite linear;
+        }
+        @keyframes aurora {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .glassmorphism {
+            background: rgba(15, 23, 35, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(58, 69, 85, 0.5);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00FFFF", // Teal
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0A0D1F", // Deep Blue/Purple
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white">
+<div class="relative min-h-screen flex flex-col">
+<div class="aurora-background"></div>
+<div class="flex flex-1">
+<aside class="w-64 bg-background-dark/50 p-4 shrink-0">
+<div class="flex flex-col h-full">
+<div class="flex items-center gap-3 mb-8">
+<img class="w-10 h-10 rounded-full" data-alt="Abstract gradient logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAulTvK3MbFZxi-NZhzPqzrs5H3EHsbOkAjvUfvgSIJdZ2fbv98o_-QBidrluAiyMhZ7440meHyTUqP7dDWj0mVztby81jmTVh1wixNERr0VGVQVAttsiKokTCZnDc9la-DGz9AuM6l4iFjAOAJ8yr0ZovGtCXAjG7ElHrIWUy1Be-4-997MbEnI1baW0QDEMFBNHIfMsBmaYIUxGNAxFtj_i8RuxIGNWJJFXMLKtAWJxHrg26cimhvx1dhyUpSwV54M2Plu2XxvYQ"/>
+<div class="flex flex-col">
+<h1 class="text-base font-medium">Admin Panel</h1>
+<p class="text-gray-400 text-sm">admin@wmap.com</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-white/70 hover:bg-primary/20 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/30 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">manage_accounts</span>
+<p class="text-sm font-medium">Role Management</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-white/70 hover:bg-primary/20 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">location_on</span>
+<p class="text-sm font-medium">Locations</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-white/70 hover:bg-primary/20 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">forum</span>
+<p class="text-sm font-medium">User Feedback</p>
+</a>
+</nav>
+<button class="mt-auto flex items-center justify-center gap-2 w-full h-10 px-4 rounded-lg bg-primary text-background-dark text-sm font-bold tracking-wide hover:bg-primary/80 transition-colors">
+<span class="material-symbols-outlined">logout</span>
+<span>Logout</span>
+</button>
+</div>
+</aside>
+<main class="flex-1 p-6 lg:p-8">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-wrap justify-between items-center gap-4 mb-8">
+<div class="flex flex-col gap-2">
+<h1 class="text-4xl font-black tracking-tighter">Role Management</h1>
+<p class="text-gray-400 text-base">Manage user roles and permissions for the Wheelchair Accessibility Map.</p>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center gap-2 overflow-hidden rounded-lg h-12 px-6 bg-primary text-background-dark text-sm font-bold shadow-lg shadow-primary/30 hover:bg-primary/80 transition-colors">
+<span class="material-symbols-outlined">add</span>
+<span class="truncate">Add New User</span>
+</button>
+</div>
+<div class="mb-6 flex flex-col sm:flex-row gap-4">
+<div class="flex-1">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full glassmorphism">
+<div class="text-gray-400 flex items-center justify-center pl-4">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-white focus:outline-0 focus:ring-0 border-none bg-transparent h-full placeholder:text-gray-400 px-4 pl-2 text-base" placeholder="Search users by name, email..." value=""/>
+</div>
+</label>
+</div>
+<div class="flex gap-3 overflow-x-auto">
+<button class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg pl-4 pr-3 glassmorphism hover:bg-primary/20 transition-colors">
+<p class="text-white text-sm font-medium">All Roles</p>
+<span class="material-symbols-outlined text-gray-400">arrow_drop_down</span>
+</button>
+<button class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg pl-4 pr-3 glassmorphism hover:bg-primary/20 transition-colors">
+<p class="text-white text-sm font-medium">Regular User</p>
+<span class="material-symbols-outlined text-gray-400">arrow_drop_down</span>
+</button>
+<button class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg pl-4 pr-3 glassmorphism hover:bg-primary/20 transition-colors">
+<p class="text-white text-sm font-medium">Business Owner</p>
+<span class="material-symbols-outlined text-gray-400">arrow_drop_down</span>
+</button>
+<button class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg pl-4 pr-3 glassmorphism hover:bg-primary/20 transition-colors">
+<p class="text-white text-sm font-medium">Admin</p>
+<span class="material-symbols-outlined text-gray-400">arrow_drop_down</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto glassmorphism rounded-xl shadow-2xl shadow-black/30">
+<div class="min-w-full">
+<table class="w-full">
+<thead>
+<tr class="border-b border-b-white/10">
+<th class="px-6 py-4 text-left text-sm font-semibold text-gray-300 tracking-wider">User Profile</th>
+<th class="px-6 py-4 text-left text-sm font-semibold text-gray-300 tracking-wider">Current Role</th>
+<th class="px-6 py-4 text-left text-sm font-semibold text-gray-300 tracking-wider">Role Permissions</th>
+<th class="px-6 py-4 text-left text-sm font-semibold text-gray-300 tracking-wider">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-white/10">
+<tr class="hover:bg-primary/10 transition-colors">
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<img class="h-10 w-10 rounded-full" data-alt="User avatar for Alex Johnson" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8QIzjHJm-dKD5P-eA8k6i8GgGUVFuytbqJ2pr10F_iEHYBbPqWhsRBrsQHGzjEH9UZFZhCfRtUn17WTsI10FkuZN5MDUkBI7sdLCyPqmsIwZOlbj3iGx3dEO6MUhbR3al9BCW6DUMLtrKLGzVAgHHIa7m7BtaPhjqzWuWkfyqIPda1sUdMohrtM9Nb-Hb2G-qq_rQP5d3SCXM7AK59JqvHrgatBPXHZdBsgIem24Zlwx4HX5S_op556Zjs6fvRXNJ2pLfTpZKvIM"/>
+<div>
+<div class="text-sm font-medium text-white">Alex Johnson</div>
+<div class="text-sm text-gray-400">alex.j@email.com</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="px-3 py-1 text-xs font-semibold leading-5 rounded-full bg-red-500/30 text-red-300">Admin</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-400 max-w-xs truncate">
+                                            Full access to all features and settings.
+                                        </td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+<div class="flex items-center gap-4">
+<button aria-label="Edit Role for Alex Johnson" class="text-primary hover:text-primary/80">Edit Role</button>
+<button aria-label="View Details for Alex Johnson" class="text-gray-400 hover:text-white">View Details</button>
+<button aria-label="Revoke Access for Alex Johnson" class="text-red-500 hover:text-red-400">Revoke Access</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-primary/10 transition-colors">
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<img class="h-10 w-10 rounded-full" data-alt="User avatar for Brenda Smith" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWHh6T8o5vMc-p5Ho6AaElwFV9cKEa2nEISrLUTxC0MopmdKqXAwRsVR9qpfbFmjJx2vGepmNz2NCIZUtBC3hMrY6K3KE23ki7TQvn68aEra1LLT6sY23otGdUPAyFi9xv00KBiuLCs9SFDDyobmTyIqD3xgmsX65Oy9Z-UHQRkrS5WB3M2FSmgYAFuG0YQpCyjRs7K7h1HnAZT_lrwDgglrk_SnfXDPoNHuMtMsm41m0HOn7zSuqHrS2EVgxlakBZDorMnoDMb1U"/>
+<div>
+<div class="text-sm font-medium text-white">Brenda Smith</div>
+<div class="text-sm text-gray-400">brenda.s@email.com</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="px-3 py-1 text-xs font-semibold leading-5 rounded-full bg-orange-500/30 text-orange-300">Business Owner</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-400 max-w-xs truncate">
+                                            Can manage business profile and respond to reviews.
+                                        </td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+<div class="flex items-center gap-4">
+<button aria-label="Edit Role for Brenda Smith" class="text-primary hover:text-primary/80">Edit Role</button>
+<button aria-label="View Details for Brenda Smith" class="text-gray-400 hover:text-white">View Details</button>
+<button aria-label="Revoke Access for Brenda Smith" class="text-red-500 hover:text-red-400">Revoke Access</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-primary/10 transition-colors">
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<img class="h-10 w-10 rounded-full" data-alt="User avatar for Charlie Brown" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPS2cBun46YC2GfedanmBPXJUX9O39gaQWVRGeZztO8T_PWGmRplJB7Y3Wly749yS4GMfrhCxSpiiuot2BlKULtliHXw4t4XYq_Yk9d1VCfb-cqM_aJ-yX3ZTJMjrV5GD5Zu-MlZHUbzVB5VHHeHFFiBV7_KjbYVX3yQOqscGi-plw_ifXlMXvzbPyKWShA0RmfyMeHqDvh27JwJxfgU9osQAuybaDvVjRlaCob6wjYCeaLpP5C3mlmxukuYI8Ya3goH_IhY4IMLY"/>
+<div>
+<div class="text-sm font-medium text-white">Charlie Brown</div>
+<div class="text-sm text-gray-400">charlie.b@email.com</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="px-3 py-1 text-xs font-semibold leading-5 rounded-full bg-sky-500/30 text-sky-300">Regular User</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-400 max-w-xs truncate">
+                                            Can view and rate locations, and post reviews.
+                                        </td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+<div class="flex items-center gap-4">
+<button aria-label="Edit Role for Charlie Brown" class="text-primary hover:text-primary/80">Edit Role</button>
+<button aria-label="View Details for Charlie Brown" class="text-gray-400 hover:text-white">View Details</button>
+<button aria-label="Revoke Access for Charlie Brown" class="text-red-500 hover:text-red-400">Revoke Access</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-primary/10 transition-colors">
+<td class="px-6 py-4 whitespace-nowrap">
+<div class="flex items-center gap-3">
+<img class="h-10 w-10 rounded-full" data-alt="User avatar for Diana Prince" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApxy9ezOD6O2GH1CiF2J3lFiXwRh3czs72ral-R7E-Xshj0nAVQ6Ltw9ydjHiaeXi0KiR63_H2Izmh_tnuy0-mBkwN1BWgJ-xaX477084grJ_Q82dPNXagSLvVoxCJ5hqJzx9UQ5tMq5OZ-aU13eIVYIg6M0SoG4rrEIe3emDvhFuqNOy3TVE3FELpUcuPMqmhRixHzAYbwOvp7VM99p174o_N1k7I0Hdt_wjV6gwwOaK8Eis_vF5Qgj6bYgyT0DX7W5-Hfv9R0G0"/>
+<div>
+<div class="text-sm font-medium text-white">Diana Prince</div>
+<div class="text-sm text-gray-400">diana.p@email.com</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 whitespace-nowrap">
+<span class="px-3 py-1 text-xs font-semibold leading-5 rounded-full bg-green-500/30 text-green-300">Authority Representative</span>
+</td>
+<td class="px-6 py-4 whitespace-nowrap text-sm text-gray-400 max-w-xs truncate">
+                                            Can verify and manage official location data.
+                                        </td>
+<td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+<div class="flex items-center gap-4">
+<button aria-label="Edit Role for Diana Prince" class="text-primary hover:text-primary/80">Edit Role</button>
+<button aria-label="View Details for Diana Prince" class="text-gray-400 hover:text-white">View Details</button>
+<button aria-label="Revoke Access for Diana Prince" class="text-red-500 hover:text-red-400">Revoke Access</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="mt-6 flex justify-center items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg glassmorphism hover:bg-primary/20 transition-colors"><span class="material-symbols-outlined">chevron_left</span></button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-background-dark font-bold">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg glassmorphism hover:bg-primary/20 transition-colors">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg glassmorphism hover:bg-primary/20 transition-colors">3</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg glassmorphism hover:bg-primary/20 transition-colors"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

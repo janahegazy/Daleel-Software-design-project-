@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Business Owner Dashboard - Wheelchair Accessibility Map</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13a4ec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101c22",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #111618;
+        }
+        .glassmorphism-card {
+            background: rgba(28, 35, 39, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .aurora-gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(ellipse at top left, rgba(19, 164, 236, 0.3) 0%, transparent 50%), radial-gradient(ellipse at bottom right, rgba(126, 34, 206, 0.3) 0%, transparent 50%);
+            z-index: -1;
+            animation: aurora 10s infinite alternate;
+        }
+        @keyframes aurora {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.2);
+            }
+        }
+    </style>
+</head>
+<body class="font-display bg-background-dark text-white">
+<div class="relative min-h-screen w-full overflow-x-hidden">
+<div class="aurora-gradient"></div>
+<header class="sticky top-0 z-10 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 py-3 bg-background-dark/80 backdrop-blur-sm border-b border-solid border-b-[#283339]">
+<div class="flex items-center justify-between whitespace-nowrap max-w-7xl mx-auto">
+<div class="flex items-center gap-4 text-white">
+<div class="size-6 text-primary">
+<svg fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"></path></svg>
+</div>
+<h1 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">Wheelchair Accessibility Map</h1>
+</div>
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Dashboard</a>
+<a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Profile</a>
+<a class="text-white text-sm font-medium leading-normal hover:text-primary transition-colors" href="#">Help</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<span class="truncate">Sign Out</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="A profile picture of the business owner" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCt4w79Z9H_hetHVj69G4t4GKUAuM-NE-7AjFXTYCOAmh5Kmx_nX8FpeDE8dY6jfrcqnDOcRGy29DTGfMn8fpWOE07hX2BVHit_7ai4wGC7v7v0CxT-b33J0yVAvwXuFGjwIwqd2gdGvxtPP0WyvYp-jOQEXOQZOgU_B88NyUCk1304qOSMMcYm9vOt0ozp1ru9EwjbyI-pDuC9jomH_OYITNSh4zUjTYWs01g58T07NZAQzcxu8zRzcEgfmlsuSqLhnQdGFJVC5ks");'></div>
+</div>
+</div>
+</header>
+<main class="px-4 sm:px-8 md:px-16 lg:px-24 xl:px-40 py-10">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-wrap justify-between items-center gap-4 mb-10">
+<div class="flex min-w-72 flex-col gap-2">
+<h2 class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">Welcome, [Business Owner Name]!</h2>
+<p class="text-[#9db0b9] text-base font-normal leading-normal">Manage your locations and engage with the community.</p>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-[#283339] text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-[#3a454c] transition-colors">
+<span class="truncate">Add a New Location</span>
+</button>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- My Locations & Recent Feedback Column -->
+<div class="lg:col-span-2 flex flex-col gap-8">
+<div class="glassmorphism-card rounded-xl p-6 shadow-lg">
+<h3 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] mb-4">My Locations</h3>
+<div class="flex flex-col gap-4">
+<!-- Location Card 1 -->
+<div class="flex flex-col sm:flex-row items-start gap-4 p-4 bg-[#1c2327]/50 rounded-lg">
+<div class="w-full sm:w-48 h-32 bg-center bg-no-repeat bg-cover rounded-lg" data-location="Anytown, USA" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAv5AKbIAaTXQgs-DfRyeL5Fb5XB4XiYbusT7D-7wv5otH3GEaIk7uSjkrWbNF3JE9H4k5gbdTr3zLtjze0Yn1kVaM7Cq5AJmo-Q2-z4kkFsTAGgJJU1s9rYtjn2ktaE4UQUTwg736pRhtaFHTpas7zm8TIaG09RRbVBjRAPGQZIFzlDAhd6oTyb7-0rgqiaPPcP5mSTw5YJSdpFKGlOCUDly6ZmGTbO91ZPdCL_BWiLkx10XGYr4uhCQy9I8kGmTVfZHfmSDxFFGA");'></div>
+<div class="flex-grow">
+<p class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Main Street Cafe</p>
+<p class="text-[#9db0b9] text-base font-normal leading-normal mt-1">123 Main St, Anytown, USA</p>
+<div class="flex items-center gap-1 mt-1 text-[#9db0b9]">
+<span class="material-symbols-outlined text-yellow-400 text-lg">star</span>
+<p class="text-base font-normal leading-normal">4.5 stars</p>
+</div>
+</div>
+<button class="flex self-end sm:self-center min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-medium leading-normal hover:bg-primary/90 transition-colors">
+<span class="truncate">Manage</span>
+</button>
+</div>
+<!-- Location Card 2 -->
+<div class="flex flex-col sm:flex-row items-start gap-4 p-4 bg-[#1c2327]/50 rounded-lg">
+<div class="w-full sm:w-48 h-32 bg-center bg-no-repeat bg-cover rounded-lg" data-location="Anytown, USA" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAq0QxlGzi0xjfa_YcNI7YfpbGKLAX9QrHgGvgMBTta-cmfyMs12EbhpNZJSztUNtYABpwPgIbauyYZzj7P4JcYQ9nqrHX72NgE0KHJocCmMyBbwLlsm309BaIyG2bX2vehN76E_dopqFdB6MHLtPs_CZdded5Mg_wveQ2IQHlv4SNdkKib_bQ54Lp-gfGcB42prGCHcxnOa0RBADS0ZL-aJjbMrQpH7-xypt8THbzk8gqCiCYioeyrzgDfl4aqSPM4-eIIL6R7Ix4");'></div>
+<div class="flex-grow">
+<p class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Downtown Library</p>
+<p class="text-[#9db0b9] text-base font-normal leading-normal mt-1">456 Oak Ave, Anytown, USA</p>
+<div class="flex items-center gap-1 mt-1 text-[#9db0b9]">
+<span class="material-symbols-outlined text-yellow-400 text-lg">star</span>
+<p class="text-base font-normal leading-normal">4.8 stars</p>
+</div>
+</div>
+<button class="flex self-end sm:self-center min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-medium leading-normal hover:bg-primary/90 transition-colors">
+<span class="truncate">Manage</span>
+</button>
+</div>
+</div>
+</div>
+<div class="glassmorphism-card rounded-xl p-6 shadow-lg">
+<h3 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] mb-4">Recent Feedback</h3>
+<div class="max-h-96 overflow-y-auto pr-2 space-y-4">
+<div class="p-4 bg-[#1c2327]/50 rounded-lg">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-bold">Alex Doe</p>
+<div class="flex items-center text-yellow-400 mt-1">
+<span class="material-symbols-outlined text-lg">star</span>
+<span class="material-symbols-outlined text-lg">star</span>
+<span class="material-symbols-outlined text-lg">star</span>
+<span class="material-symbols-outlined text-lg">star</span>
+<span class="material-symbols-outlined text-lg text-gray-500">star</span>
+</div>
+</div>
+<p class="text-xs text-[#9db0b9]">on Main Street Cafe</p>
+</div>
+<p class="text-[#d0dbe1] mt-2">"Great ramp access, but the restroom was a bit tight to navigate. Staff were very helpful though!"</p>
+<button class="mt-3 text-sm font-medium text-primary hover:underline">Respond</button>
+</div>
+<div class="p-4 bg-[#1c2327]/50 rounded-lg">
+<div class="flex justify-between items-start">
+<div>
+<p class="font-bold">Jordan Smith</p>
+<div class="flex items-center text-yellow-400 mt-1">
+<span class="material-symbols-outlined text-lg">star</span>
+<span class="material-symbols-outlined text-lg">star</span>
+<span class="material-symbols-outlined text-lg">star</span>
+<span class="material-symbols-outlined text-lg">star</span>
+<span class="material-symbols-outlined text-lg">star</span>
+</div>
+</div>
+<p class="text-xs text-[#9db0b9]">on Downtown Library</p>
+</div>
+<p class="text-[#d0dbe1] mt-2">"Fantastic accessibility. Automatic doors, spacious elevators, and accessible checkout counters. A model for other places!"</p>
+<button class="mt-3 text-sm font-medium text-primary hover:underline">Respond</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Analytics & Other Cards Column -->
+<div class="lg:col-span-1 flex flex-col gap-8">
+<div class="glassmorphism-card rounded-xl p-6 shadow-lg">
+<h3 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] mb-4">Accessibility Analytics</h3>
+<div class="flex justify-around text-center mb-4">
+<div>
+<p class="text-2xl font-bold text-primary">124</p>
+<p class="text-xs text-[#9db0b9]">Total Reviews</p>
+</div>
+<div>
+<p class="text-2xl font-bold text-primary">4.6</p>
+<p class="text-xs text-[#9db0b9]">Average Rating</p>
+</div>
+</div>
+<div class="w-full h-48 bg-center bg-no-repeat bg-contain" data-alt="A line chart showing a positive trend in accessibility ratings over the last six months." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDeV8RU_AQV-jE0VvxD4otTSZG6KPrS57g1i_gqXO6os_4Si3XPaEyO21aDbDFsM6kjKroQSumlDOMmrTM9n_tAF9sPa3sSDMsu7sd-4p_h4qXBSRTOBm6lY2GESOSN4V97DG-we-aovuM6ZeBqQlibAwdsZZsByLPR19NoPonVUZZjqyy3qpC1L9rVEEy1VwhMJPcvsvAfDfXLqIy55VuoJPA_so9hIP8mx22a2qQS3--QFQCUybLY_vBy2fm-zJsonOj738gSYdI'); background-color: #1c2327; border-radius: 0.5rem; padding: 1rem;">
+<!-- Placeholder for chart -->
+<img class="w-full h-full object-contain" data-alt="Line chart showing ratings trend" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeUAkMvr8q6RZtOWkwR4sgyI658akD92QN_yUp415eLiEjhPWvTY4VT_xtdmvWGVYDt0T-mxNHmdVjKEMai5Wp_hbWWzzKMJtOLo3jGXNwlQ1SVMhhXbcVpyW-j-RqAYBSIZp5RVj9pxhq8F11tFodf2-p3DyrJcvxmgyGUBSrlPiRifUsaKcthBU6cD_9Lxph1WD49yrOYS59Oz7hN1upfqcyqA5q_FTsMpysJE48MEfvJPEnzWc_17SjsvxgNZ0pwPIsOZXqjuQ"/>
+</div>
+</div>
+<div class="glassmorphism-card rounded-xl p-6 shadow-lg">
+<h3 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] mb-3">Profile Completion</h3>
+<p class="text-sm text-[#9db0b9] mb-2">You're almost there! Add more details to help users.</p>
+<div class="w-full bg-[#283339] rounded-full h-2.5 mb-3">
+<div class="bg-primary h-2.5 rounded-full" style="width: 75%"></div>
+</div>
+<button class="w-full flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary/20 text-primary text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/30 transition-colors">
+<span class="truncate">Complete Your Profile</span>
+</button>
+</div>
+<div class="glassmorphism-card rounded-xl p-6 shadow-lg">
+<h3 class="text-white text-lg font-bold leading-tight tracking-[-0.015em] mb-3">Accessibility Tips</h3>
+<div class="space-y-3">
+<a class="block text-sm text-[#d0dbe1] hover:text-primary transition-colors" href="#">Tip: Ensure pathways are at least 36 inches wide.</a>
+<a class="block text-sm text-[#d0dbe1] hover:text-primary transition-colors" href="#">Tip: Offer menus in large print or digital formats.</a>
+<a class="block text-sm text-[#d0dbe1] hover:text-primary transition-colors" href="#">Tip: Train your staff on disability awareness.</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

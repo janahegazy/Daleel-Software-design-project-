@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html class="dark" dir="ltr" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Localization - Wheelchair Accessibility Map</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<style>
+    @keyframes aurora {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    :root {
+      --transition-duration: 500ms;
+    }
+    html, body {
+      transition: all var(--transition-duration) ease-in-out;
+    }
+    [dir="rtl"] .material-symbols-outlined.rtl-flip {
+      transform: scaleX(-1);
+    }
+  </style>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#4A90E2",
+            "accent": "#50E3C2",
+            "background-light": "#f5f7f8",
+            "background-dark": "#0f1723",
+          },
+          fontFamily: {
+            "display": ["Space Grotesk", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.75rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+          transitionDuration: {
+            '500': '500ms',
+          }
+        },
+      },
+    }
+    function setLanguage(lang) {
+        const htmlEl = document.documentElement;
+        if (lang === 'ar') {
+            htmlEl.setAttribute('dir', 'rtl');
+            htmlEl.setAttribute('lang', 'ar');
+            document.getElementById('header-title').innerText = 'دعم اللغة';
+            document.getElementById('header-subtitle').innerText = 'حدد لغتك المفضلة.';
+            document.getElementById('settings-title').innerText = 'إعدادات اللغة';
+            document.getElementById('settings-desc').innerText = 'سيؤدي تغيير اللغة إلى تحديث واجهة التطبيق بالكامل، بما في ذلك النصوص والخرائط وإشارات الاتجاه. سيتم ضبط التخطيط تلقائيًا لدعم اللغات من اليمين إلى اليسار (RTL) مثل العربية.';
+            document.getElementById('preview-title').innerText = 'معاينة اللغة';
+            document.getElementById('preview-address').innerText = '123 شارع الوصول، مدينة الدمج';
+            document.getElementById('preview-button-text').innerText = 'احصل على الاتجاهات';
+            document.getElementById('preview-sentence').innerText = 'هذه جملة نموذجية لإظهار تدفق النص واتجاهه.';
+            document.getElementById('save-button').innerText = 'حفظ التغييرات';
+        } else {
+            htmlEl.setAttribute('dir', 'ltr');
+            htmlEl.setAttribute('lang', 'en');
+            document.getElementById('header-title').innerText = 'Language Support';
+            document.getElementById('header-subtitle').innerText = 'Select your preferred language.';
+            document.getElementById('settings-title').innerText = 'Language Settings';
+            document.getElementById('settings-desc').innerText = 'Changing the language will update the entire application\'s interface, including text, maps, and directional cues. The layout will automatically adjust to support Right-to-Left (RTL) languages like Arabic.';
+            document.getElementById('preview-title').innerText = 'Language Preview';
+            document.getElementById('preview-address').innerText = '123 Accessibility Lane, Inclusion City';
+            document.getElementById('preview-button-text').innerText = 'Get Directions';
+            document.getElementById('preview-sentence').innerText = 'This is a sample sentence to demonstrate text flow and directionality.';
+            document.getElementById('save-button').innerText = 'Save Changes';
+        }
+    }
+  </script>
+</head>
+<body class="bg-background-dark font-display">
+<div class="relative min-h-screen w-full flex flex-col items-center bg-background-dark dark overflow-hidden">
+<div class="absolute inset-0 w-full h-full bg-gradient-to-r from-purple-900/30 via-blue-900/30 to-teal-900/30 animate-[aurora_20s_ease-in-out_infinite]"></div>
+<div class="relative z-10 w-full max-w-7xl mx-auto flex-grow flex">
+<aside class="w-64 flex-shrink-0 p-4 transition-all duration-500">
+<div class="flex h-full min-h-[700px] flex-col justify-between rounded-xl bg-black/30 backdrop-blur-xl p-4 border border-white/10">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<div class="size-4">
+<svg class="text-white" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M39.5563 34.1455V13.8546C39.5563 15.708 36.8773 17.3437 32.7927 18.3189C30.2914 18.916 27.263 19.2655 24 19.2655C20.737 19.2655 17.7086 18.916 15.2073 18.3189C11.1227 17.3437 8.44365 15.708 8.44365 13.8546V34.1455C8.44365 35.9988 11.1227 37.6346 15.2073 38.6098C17.7086 39.2069 20.737 39.5564 24 39.5564C27.263 39.5564 30.2914 39.2069 32.7927 38.6098C36.8773 37.6346 39.5563 35.9988 39.5563 34.1455Z" fill="currentColor"></path>
+<path clip-rule="evenodd" d="M10.4485 13.8519C10.4749 13.9271 10.6203 14.246 11.379 14.7361C12.298 15.3298 13.7492 15.9145 15.6717 16.3735C18.0007 16.9296 20.8712 17.2655 24 17.2655C27.1288 17.2655 29.9993 16.9296 32.3283 16.3735C34.2508 15.9145 35.702 15.3298 36.621 14.7361C37.3796 14.246 37.5251 13.9271 37.5515 13.8519C37.5287 13.7876 37.4333 13.5973 37.0635 13.2931C36.5266 12.8516 35.6288 12.3647 34.343 11.9175C31.79 11.0295 28.1333 10.4437 24 10.4437C19.8667 10.4437 16.2099 11.0295 13.657 11.9175C12.3712 12.3647 11.4734 12.8516 10.9365 13.2931C10.5667 13.5973 10.4713 13.7876 10.4485 13.8519ZM37.5563 18.7877C36.3176 19.3925 34.8502 19.8839 33.2571 20.2642C30.5836 20.9025 27.3973 21.2655 24 21.2655C20.6027 21.2655 17.4164 20.9025 14.7429 20.2642C13.1498 19.8839 11.6824 19.3925 10.4436 18.7877V34.1275C10.4515 34.1545 10.5427 34.4867 11.379 35.027C12.298 35.6207 13.7492 36.2054 15.6717 36.6644C18.0007 37.2205 20.8712 37.5564 24 37.5564C27.1288 37.5564 29.9993 37.2205 32.3283 36.6644C34.2508 36.2054 35.702 35.6207 36.621 35.027C37.4573 34.4867 37.5485 34.1546 37.5563 34.1275V18.7877ZM41.5563 13.8546V34.1455C41.5563 36.1078 40.158 37.5042 38.7915 38.3869C37.3498 39.3182 35.4192 40.0389 33.2571 40.5551C30.5836 41.1934 27.3973 41.5564 24 41.5564C20.6027 41.5564 17.4164 41.1934 14.7429 40.5551C12.5808 40.0389 10.6502 39.3182 9.20848 38.3869C7.84205 37.5042 6.44365 36.1078 6.44365 34.1455L6.44365 13.8546C6.44365 12.2684 7.37223 11.0454 8.39581 10.2036C9.43325 9.3505 10.8137 8.67141 12.343 8.13948C15.4203 7.06909 19.5418 6.44366 24 6.44366C28.4582 6.44366 32.5797 7.06909 35.657 8.13948C37.1863 8.67141 38.5667 9.3505 39.6042 10.2036C40.6278 11.0454 41.5563 12.2684 41.5563 13.8546Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Wheelchair Map</h2>
+</div>
+<div class="flex flex-col gap-2 mt-4">
+<a class="flex items-center gap-3 px-3 py-2 text-white/70 hover:bg-white/10 hover:text-white rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined rtl-flip">home</span>
+<p class="text-sm font-medium leading-normal">Home</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white/70 hover:bg-white/10 hover:text-white rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined rtl-flip">explore</span>
+<p class="text-sm font-medium leading-normal">Discover</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white/70 hover:bg-white/10 hover:text-white rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined rtl-flip">star</span>
+<p class="text-sm font-medium leading-normal">Ratings</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white/70 hover:bg-white/10 hover:text-white rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined rtl-flip">person</span>
+<p class="text-sm font-medium leading-normal">Profile</p>
+</a>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-white/10 text-white transition-colors" href="#">
+<span class="material-symbols-outlined">language</span>
+<p class="text-sm font-medium leading-normal">Localization</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 text-white/70 hover:bg-white/10 hover:text-white rounded-lg transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium leading-normal">Settings</p>
+</a>
+</div>
+</div>
+</aside>
+<main class="flex-1 p-4 transition-all duration-500">
+<div class="w-full h-full flex flex-col gap-6">
+<header class="flex items-center justify-between p-4 rounded-xl bg-black/30 backdrop-blur-xl border border-white/10">
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center size-10 rounded-full text-white hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined rtl-flip">arrow_back</span>
+</button>
+<div class="flex flex-col">
+<h1 class="text-white text-2xl font-bold leading-tight tracking-[-0.033em]" id="header-title">Language Support</h1>
+<p class="text-white/60 text-sm font-normal leading-normal" id="header-subtitle">Select your preferred language.</p>
+</div>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-12" data-alt="User avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDvgntS5innE1u4CeYa0zlC4QFVelaKS09jm7kvSxVjMGj_2Vtjodh6fGEW_Za1UeVYeWvpzanx_3eoKKm5TdL1B0Pp91PuoYPZZJfcmjYkVYf4hT5q0Ld8EAm7gCeK-hc0dn1xoFiSuhgBJOHwvm9KCTjXJ3rb1t82QqBT1SHTkdZ6Vkm2hUpSQHChhv_wWtYneEzJ8GROilgmFI3la8jkim1W-SKX_IchxRqNvC_Iv_Xnwa65TOQcGIJ4gK4m-OUkjyh3sfySSC4");'></div>
+</header>
+<div class="flex flex-col gap-6">
+<div class="p-4 rounded-xl bg-black/30 backdrop-blur-xl border border-white/10">
+<div class="flex h-12 flex-1 items-center justify-center rounded-lg bg-black/20 p-1">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-md px-4 has-[:checked]:bg-primary has-[:checked]:shadow-[0_4px_14px_rgba(74,144,226,0.5)] has-[:checked]:text-white text-white/60 text-sm font-medium leading-normal transition-all duration-300">
+<span class="truncate">English</span>
+<input checked="" class="invisible w-0" name="language-select" onchange="setLanguage(this.value)" type="radio" value="en"/>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-md px-4 has-[:checked]:bg-primary has-[:checked]:shadow-[0_4px_14px_rgba(74,144,226,0.5)] has-[:checked]:text-white text-white/60 text-sm font-medium leading-normal transition-all duration-300">
+<span class="truncate">العربية</span>
+<input class="invisible w-0" name="language-select" onchange="setLanguage(this.value)" type="radio" value="ar"/>
+</label>
+</div>
+</div>
+<div class="p-6 rounded-xl bg-black/30 backdrop-blur-xl border border-white/10">
+<div class="flex flex-col md:flex-row w-full items-start justify-between gap-4">
+<div class="flex max-w-xl flex-1 flex-col gap-2">
+<p class="text-white text-xl font-bold leading-tight" id="settings-title">Language &amp; Layout</p>
+<p class="text-white/60 text-base font-normal leading-relaxed" id="settings-desc">
+        Changing the language will update the entire application's interface, including text, maps, and directional cues. The layout will automatically adjust to support Right-to-Left (RTL) languages like Arabic with a smooth transition.
+      </p>
+</div>
+<div class="flex items-center gap-4 text-accent">
+<div class="flex flex-col items-center">
+<span class="font-bold text-lg">LTR</span>
+<span class="material-symbols-outlined text-5xl rtl-flip">align_horizontal_left</span>
+</div>
+<span :class="{'rotate-180': lang === 'ar'}" class="material-symbols-outlined text-4xl text-white/80 transition-transform duration-500">sync_alt</span>
+<div class="flex flex-col items-center">
+<span class="font-bold text-lg">RTL</span>
+<span class="material-symbols-outlined text-5xl rtl-flip">align_horizontal_right</span>
+</div>
+</div>
+</div>
+</div>
+<div class="p-6 rounded-xl bg-black/30 backdrop-blur-xl border border-white/10">
+<h3 class="text-white font-bold text-lg mb-4" id="preview-title">Language Preview</h3>
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-white/60">location_on</span>
+<p class="text-white" id="preview-address">123 Accessibility Lane, Inclusion City</p>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center justify-center gap-2 rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold shadow-[0_4px_14px_rgba(74,144,226,0.5)] hover:bg-primary/90 transition-all">
+<span class="material-symbols-outlined rtl-flip">directions</span>
+<span class="truncate" id="preview-button-text">Get Directions</span>
+</button>
+</div>
+<p class="text-white/80" id="preview-sentence">This is a sample sentence to demonstrate text flow and directionality.</p>
+</div>
+</div>
+</div>
+<div class="mt-auto p-4">
+<button class="w-full flex items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-accent text-background-dark text-base font-bold shadow-[0_4px_14px_rgba(80,227,194,0.5)] hover:bg-accent/90 transition-all">
+<span class="truncate" id="save-button">Save Changes</span>
+</button>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

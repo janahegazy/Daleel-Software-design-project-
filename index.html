@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wheelchair Accessability Map</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Poppins", Arial, sans-serif;
+            background: linear-gradient(135deg, #1e1f29, #3b3d53);
+            color: #fff;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            margin-top: 20px;
+            letter-spacing: 1px;
+        }
+
+        h3 {
+            text-align: center;
+            font-weight: 300;
+            margin-top: 0;
+            margin-bottom: 50px;
+            opacity: 0.8;
+            font-size: 18px;
+        }
+
+        .grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 25px;
+            border-radius: 18px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.3);
+            transition: 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #4db8ff;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            line-height: 1.8;
+        }
+
+        li {
+            margin: 6px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        a:hover {
+            color: #4db8ff;
+            margin-left: 4px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            font-size: 13px;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Wheelchair Accessibility Map</h1>
+    <h3>Select a module to explore</h3>
+
+    <div class="grid">
+
+        <!-- ONBOARDING -->
+        <div class="card">
+            <h2>Onboarding</h2>
+            <ul>
+                <li><a href="welcome_and_onboarding_screen.html">Welcome / Onboarding</a></li>
+                <li><a href="user_registeration.html">User Registration</a></li>
+            </ul>
+        </div>
+
+        <!-- USER -->
+        <div class="card">
+            <h2> Regular User</h2>
+            <ul>
+                 <li><a href="profile_management.html">Profile Management</a></li>
+                <li><a href="regular_user_dashboard.html">User Dashboard</a></li>
+                <li><a href="available_locations_map.html">Available Locations Map</a></li>
+                <li><a href="route_management.html">Route Management</a></li>
+                <li><a href="interactive_map.html">Interactive Map</a></li>
+                <li><a href="location_details.html">Location Details</a></li>
+                <li><a href="user_review.html">User Reviews</a></li>
+                <li><a href="user_contribution.html">User Contribution</a></li>
+                <li><a href="Help_center.html">Help Center</a></li>
+                <li><a href="support_system.html">Support System</a></li>
+                <li><a href="intelligent_recommendation_engine.html">Recommendation Engine</a></li>
+                <li><a href="Notification_management.html">Notification Management</a></li>
+                <li><a href="emergency_assistance.html">Emergency Assistance</a></li>
+                <li><a href="Language_support.html">Language Support</a></li>
+                <li><a href="community_engagement.html">Community Engagement</a></li>
+                <li><a href="Assistive_Accessibility.html">Assistive Accessibility</a></li>
+            </ul>
+        </div>
+
+        <!-- BUSINESS OWNER -->
+        <div class="card">
+            <h2> Business Owner</h2>
+            <ul>
+                <li><a href="business_owner_dashboard.html">Dashboard</a></li>
+                <li><a href="profile_management.html">Profile Management</a></li>
+                <li><a href="location_details.html">Location Management</a></li>
+                <li><a href="user_review.html">User Reviews</a></li>
+                <li><a href="Notification_management.html">Notification Management</a></li>
+                
+        
+            </ul>
+        </div>
+
+        <!-- AUTHORITY -->
+        <div class="card">
+            <h2> Authority Representative</h2>
+            <ul>
+                <li><a href="authority_representative_dashboard.html">Dashboard</a></li>
+                <li><a href="profile_management.html">Profile Management</a></li>
+                <li><a href="Notification_management.html">Notification Management</a></li>
+                
+            </ul>
+        </div>
+
+        <!-- ADMIN -->
+        <div class="card">
+            <h2> Admin Panel</h2>
+            <ul>
+                <li><a href="Admin_dashboard.html">Admin Dashboard</a></li>
+                <li><a href="profile_management.html">Profile Management</a></li>
+                <li><a href="backup_system_management.html">Backup System</a></li>
+                <li><a href="data_analytics.html">Data Analytics</a></li>
+                <li><a href="review_management.html">Review Management</a></li>
+                <li><a href="report_management.html">Report Management</a></li>
+                <li><a href="role_management.html">Role Management</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="footer">© 2025 Wheelchair Accessibility Map </div>
+
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Backup System - Wheelchair Accessibility Map</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00FFFF", 
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0A002A", 
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.75rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background: radial-gradient(circle at top left, rgba(10,0,42,1) 0%, rgba(36,0,89,1) 35%, rgba(10,0,42,1) 100%);
+        }
+        .glassmorphism {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+</head>
+<body class="font-display text-white bg-background-dark">
+<div class="relative flex min-h-screen w-full flex-col">
+<div class="flex flex-1">
+<aside class="w-64 p-6 sticky top-0 h-screen">
+<div class="flex h-full flex-col justify-between">
+<div class="flex flex-col gap-8">
+<div class="flex items-center gap-3">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="The logo for Wheelchair Accessibility Map" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAVELiLhH2CgQRLua3-YfZCMh_V7QTFwzOtLGjoJoMc8Ab0Ssq1FQ-wy_fb_t8MUasrWbfQxzwTFojf6MTglsbe5Mzv1UfLcUK1tjbJk-5PRqpO2DlKWAc4xgXAriHpVsA5AOOshcMHEdn0Vh-KlEMde0BGJG5_B31zsYswVUjf-GyeYdS0QDaJJps0o0Ci4DOPYf5sAr-e185S88RQnRM54yU4TxQEzsvEzNgByG_5OW-gx4aILIg9lXkKMqUiKI-AGcAfaaD5sXk");'></div>
+<h1 class="text-white text-lg font-bold leading-normal">W.A.M.</h1>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-white/70 hover:bg-primary/20 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-white/70 hover:bg-primary/20 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">location_on</span>
+<p class="text-sm font-medium leading-normal">Locations</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-white/70 hover:bg-primary/20 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">route</span>
+<p class="text-sm font-medium leading-normal">Routes</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 text-white transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">cloud_sync</span>
+<p class="text-sm font-medium leading-normal">Backup System</p>
+</a>
+</nav>
+</div>
+<div>
+<div class="flex items-center gap-3 mb-4">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Admin user avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDdUedkQSTK28gDNmJeypOSFxlbizM8PjwrHsNAnoSnVMc7XPy31MktOQSfSs19XdpACLynYAuk6_LbkFokBqiwbV4k8RAspyy3ndd_Qowcu_cLQ_sBCkw4XGW3tLBKjQEk629Rg3ocVE-LmICdKBwfz2HgOhHmqS-tbOK7xFurEtYtSnTO8GQdnlYe9doFl5MklOFtGbJq8D6H2V0ADPT8SD06RwDeJzjyXCmMTMfvp-r8VZ6JgFX-psOc1ruYrCVSHfoMGtiM8FA");'></div>
+<div class="flex flex-col">
+<h2 class="text-white text-base font-medium leading-normal">Admin</h2>
+<p class="text-white/60 text-sm font-normal leading-normal">admin@wcam.com</p>
+</div>
+</div>
+<button class="w-full flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary/20 text-white hover:bg-primary/30 text-sm font-bold leading-normal tracking-[0.015em] transition-colors">
+<span class="truncate">Logout</span>
+</button>
+</div>
+</div>
+</aside>
+<main class="flex-1 p-6">
+<div class="flex flex-wrap justify-between gap-3 mb-8">
+<div class="flex min-w-72 flex-col gap-2">
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">Backup System</h1>
+<p class="text-white/60 text-base font-normal leading-normal">Manage data backups and restore points.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<div class="glassmorphism rounded-xl p-6 flex flex-col gap-4 shadow-lg">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-white/70 text-sm font-normal leading-normal">Status</p>
+<p class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Automatic Daily Cloud Backup</p>
+</div>
+<span class="material-symbols-outlined text-green-400 text-4xl">check_circle</span>
+</div>
+<div>
+<p class="text-white text-base font-normal leading-normal">Status: <span class="font-bold text-green-400">Active</span></p>
+<p class="text-white/70 text-base font-normal leading-normal">Last Backup: Today, 2:30 AM</p>
+</div>
+</div>
+<div class="glassmorphism rounded-xl p-6 flex flex-col justify-between gap-4 shadow-lg">
+<div>
+<p class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Manual Restore Point</p>
+<p class="text-white/70 text-base font-normal leading-normal mt-1">Create a new restore point to save the current state of the data.</p>
+</div>
+<button class="flex w-full sm:w-auto min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary text-background-dark text-sm font-bold leading-normal shadow-[0_0_20px_rgba(0,255,255,0.4)] hover:bg-primary/90 transition-all">
+<span class="truncate">Create Manual Restore Point</span>
+</button>
+</div>
+</div>
+<div class="mt-8">
+<h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] mb-1">Version History</h2>
+<p class="text-white/70 text-base font-normal leading-normal mb-4">Restore location and route data from a previous point in time.</p>
+<div class="glassmorphism rounded-xl shadow-lg overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="border-b border-white/10">
+<tr>
+<th class="p-4 text-sm font-semibold text-white/70">Version</th>
+<th class="p-4 text-sm font-semibold text-white/70">Date Created</th>
+<th class="p-4 text-sm font-semibold text-white/70">Created By</th>
+<th class="p-4 text-sm font-semibold text-white/70 text-right">Action</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-white/10">
+<td class="p-4 text-white">v2.1.5</td>
+<td class="p-4 text-white/90">2024-10-26 14:45 UTC</td>
+<td class="p-4 text-white/90">Admin</td>
+<td class="p-4 text-right">
+<button class="flex ml-auto min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-8 px-4 bg-primary/20 text-primary text-sm font-medium leading-normal hover:bg-primary/30 transition-colors">
+<span class="truncate">Restore</span>
+</button>
+</td>
+</tr>
+<tr class="border-b border-white/10">
+<td class="p-4 text-white">v2.1.4</td>
+<td class="p-4 text-white/90">2024-10-25 11:20 UTC</td>
+<td class="p-4 text-white/90">Admin</td>
+<td class="p-4 text-right">
+<button class="flex ml-auto min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-8 px-4 bg-primary/20 text-primary text-sm font-medium leading-normal hover:bg-primary/30 transition-colors">
+<span class="truncate">Restore</span>
+</button>
+</td>
+</tr>
+<tr class="border-b border-white/10">
+<td class="p-4 text-white">v2.1.3</td>
+<td class="p-4 text-white/90">2024-10-24 09:00 UTC</td>
+<td class="p-4 text-white/90">System</td>
+<td class="p-4 text-right">
+<button class="flex ml-auto min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-8 px-4 bg-primary/20 text-primary text-sm font-medium leading-normal hover:bg-primary/30 transition-colors">
+<span class="truncate">Restore</span>
+</button>
+</td>
+</tr>
+<tr>
+<td class="p-4 text-white">v2.1.2</td>
+<td class="p-4 text-white/90">2024-10-23 18:05 UTC</td>
+<td class="p-4 text-white/90">Admin</td>
+<td class="p-4 text-right">
+<button class="flex ml-auto min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-md h-8 px-4 bg-primary/20 text-primary text-sm font-medium leading-normal hover:bg-primary/30 transition-colors">
+<span class="truncate">Restore</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

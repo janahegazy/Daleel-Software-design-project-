@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wheelchair Accessibility Map - Help Center</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00A9FF",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0A192F",
+                        "glass-light": "rgba(255, 255, 255, 0.1)",
+                        "glass-dark": "rgba(255, 255, 255, 0.1)",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    backdropBlur: {
+                        'xl': '10px',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background-color: var(--tw-bg-opacity);
+            backdrop-filter: blur(10px);
+            --tw-bg-opacity: 1;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .dark .glass-card {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 md:px-10 lg:px-20 xl:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#272f3a] px-4 sm:px-10 py-3">
+<div class="flex items-center gap-4 text-white">
+<div class="text-primary">
+<span class="material-symbols-outlined text-4xl">accessible_forward</span>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Wheelchair Accessibility Map</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-white text-sm font-medium leading-normal" href="#">Map</a>
+<a class="text-primary text-sm font-bold leading-normal" href="#">Help Center</a>
+<a class="text-white text-sm font-medium leading-normal" href="#">Profile</a>
+</div>
+<div class="flex gap-2">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-primary/20 text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/30 transition-colors">
+<span class="truncate">Sign In</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-opacity">
+<span class="truncate">Sign Up</span>
+</button>
+</div>
+</div>
+<div class="md:hidden">
+<button class="text-white">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</header>
+<main class="flex-1">
+<div class="py-12 sm:py-20 px-4">
+<div class="flex min-h-[380px] flex-col gap-6 items-center justify-center text-center">
+<div class="flex flex-col gap-2">
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] sm:text-5xl">Help Center</h1>
+<h2 class="text-gray-300 text-base font-normal leading-normal sm:text-lg">How can we assist you today?</h2>
+</div>
+<label class="flex flex-col min-w-40 h-14 w-full max-w-[480px] sm:h-16">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full">
+<div class="text-gray-400 flex border border-r-0 border-white/20 bg-white/5 items-center justify-center pl-[15px] rounded-l-xl">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input aria-label="Search Help Center" class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-none text-white focus:outline-0 focus:ring-2 focus:ring-primary border-y border-white/20 bg-white/5 placeholder:text-gray-400 px-[15px] text-sm font-normal leading-normal sm:text-base" placeholder="Search tutorials, FAQs, and more..." value=""/>
+<div class="flex items-center justify-center rounded-r-xl border-l-0 border border-white/20 bg-white/5 pr-[7px]">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 sm:h-12 sm:px-5 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-opacity-90 transition-opacity">
+<span class="truncate">Search</span>
+</button>
+</div>
+</div>
+</label>
+</div>
+</div>
+<div class="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-6 p-4">
+<div class="flex flex-1 gap-4 rounded-xl border border-white/20 p-6 flex-col glass-card hover:border-primary transition-all duration-300 transform hover:-translate-y-1">
+<div class="text-primary">
+<span class="material-symbols-outlined text-3xl">school</span>
+</div>
+<div class="flex flex-col gap-1">
+<h2 class="text-white text-lg font-bold leading-tight">Getting Started Tutorials</h2>
+<p class="text-gray-300 text-sm font-normal leading-normal">Learn the basics of navigating the map and adding new locations.</p>
+</div>
+</div>
+<div class="flex flex-1 gap-4 rounded-xl border border-white/20 p-6 flex-col glass-card hover:border-primary transition-all duration-300 transform hover:-translate-y-1">
+<div class="text-primary">
+<span class="material-symbols-outlined text-3xl">movie</span>
+</div>
+<div class="flex flex-col gap-1">
+<h2 class="text-white text-lg font-bold leading-tight">Video Guides</h2>
+<p class="text-gray-300 text-sm font-normal leading-normal">Watch step-by-step video demonstrations of key features.</p>
+</div>
+</div>
+<div class="flex flex-1 gap-4 rounded-xl border border-white/20 p-6 flex-col glass-card hover:border-primary transition-all duration-300 transform hover:-translate-y-1">
+<div class="text-primary">
+<span class="material-symbols-outlined text-3xl">quiz</span>
+</div>
+<div class="flex flex-col gap-1">
+<h2 class="text-white text-lg font-bold leading-tight">Frequently Asked Questions</h2>
+<p class="text-gray-300 text-sm font-normal leading-normal">Find answers to common questions about the app.</p>
+</div>
+</div>
+<div class="flex flex-1 gap-4 rounded-xl border border-white/20 p-6 flex-col glass-card hover:border-primary transition-all duration-300 transform hover:-translate-y-1">
+<div class="text-primary">
+<span class="material-symbols-outlined text-3xl">accessibility_new</span>
+</div>
+<div class="flex flex-col gap-1">
+<h2 class="text-white text-lg font-bold leading-tight">Accessibility Best Practices</h2>
+<p class="text-gray-300 text-sm font-normal leading-normal">Discover tips for making places more accessible.</p>
+</div>
+</div>
+</div>
+</main>
+<footer class="flex flex-col gap-6 px-5 py-10 mt-10 text-center border-t border-solid border-t-[#272f3a]">
+<div class="flex flex-wrap items-center justify-center gap-6">
+<a class="text-gray-400 text-base font-normal leading-normal min-w-40 hover:text-primary" href="#">Privacy Policy</a>
+<a class="text-gray-400 text-base font-normal leading-normal min-w-40 hover:text-primary" href="#">Terms of Service</a>
+<a class="text-gray-400 text-base font-normal leading-normal min-w-40 hover:text-primary" href="#">Contact Us</a>
+</div>
+<div class="flex flex-wrap justify-center gap-4">
+<a class="text-gray-400 hover:text-primary transition-colors" href="#"><svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path></svg></a>
+<a class="text-gray-400 hover:text-primary transition-colors" href="#"><svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124C7.691 8.094 4.066 6.13 1.64 3.161c-.427.722-.666 1.561-.666 2.475 0 1.71.87 3.213 2.188 4.096-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548z"></path></svg></a>
+<a class="text-gray-400 hover:text-primary transition-colors" href="#"><svg class="w-6 h-6" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.07 4.85-1.48 3.225-1.691 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.225-1.48-4.771-1.691-4.919-4.919-.058-1.265-.07-1.645-.07-4.849 0-3.205.012-3.584.07-4.85.149-3.225 1.691-4.771 4.919-4.919.058-1.265.069-1.645.069-4.849zm0 1.8a9.6 9.6 0 100 19.2 9.6 9.6 0 000-19.2zM12 7a5 5 0 100 10 5 5 0 000-10zm0 8a3 3 0 110-6 3 3 0 010 6zm6.5-9.25a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z"></path></svg></a>
+</div>
+<p class="text-gray-500 text-sm font-normal leading-normal">© 2024 Wheelchair Accessibility Map. All rights reserved.</p>
+</footer>
+</div>
+</div>
+</div>
+<div class="fixed bottom-5 right-5 z-50">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-16 w-16 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] shadow-lg hover:bg-opacity-90 transition-all duration-300 animate-pulse hover:animate-none">
+<span class="material-symbols-outlined text-3xl">support_agent</span>
+<span class="sr-only">Chat</span>
+</button>
+</div>
+</div>
+</body></html>

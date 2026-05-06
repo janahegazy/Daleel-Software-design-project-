@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wheelchair Accessibility Map</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0064fa",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0f1723",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .aurora-gradient {
+            background-image: radial-gradient(ellipse at 50% 0%, rgba(38, 70, 83, 0.4), transparent 70%),
+            radial-gradient(ellipse at 50% 100%, rgba(115, 60, 108, 0.4), transparent 70%);
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="relative min-h-screen w-full">
+<header class="absolute top-0 left-0 right-0 z-20 px-4 sm:px-6 lg:px-10 py-3">
+<div class="mx-auto max-w-screen-xl">
+<div class="flex items-center justify-between whitespace-nowrap bg-black/20 backdrop-blur-md rounded-xl px-6 py-3 border border-white/10 shadow-lg">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-white">
+<span class="material-symbols-outlined text-primary text-3xl">accessible</span>
+<h1 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">Accessibility Map</h1>
+</div>
+</div>
+<div class="hidden md:flex flex-1 justify-center">
+<label class="flex flex-col min-w-40 !h-10 w-full max-w-md">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full">
+<div class="text-[#9aa7bc] flex border-none bg-white/10 items-center justify-center pl-4 rounded-l-lg border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-white focus:outline-0 focus:ring-0 border-none bg-white/10 focus:border-none h-full placeholder:text-[#9aa7bc] px-4 rounded-l-none border-l-0 pl-2 text-base font-normal leading-normal" placeholder="Search for a location or address" value=""/>
+</div>
+</label>
+</div>
+<div class="flex flex-1 justify-end items-center gap-6">
+<div class="hidden lg:flex items-center gap-6">
+<a class="text-white/80 hover:text-white text-sm font-medium leading-normal transition-colors" href="#">Profile</a>
+<a class="text-white/80 hover:text-white text-sm font-medium leading-normal transition-colors" href="#">Settings</a>
+<a class="text-white/80 hover:text-white text-sm font-medium leading-normal transition-colors" href="#">Help</a>
+</div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User avatar with a colorful gradient" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCQ_EiU-kD8WVxGTrqVpDqrPmEqb0lVQniDILM6y2zMRVZb-pXpcKVuv38mn880I4sbgLyYkP8BjvKf6w7AxmAz0nC8Si2vmH5Es1oTIkN4xdC7oSbOS9ub0n6zqv8_xVY58_nfN43Zrrk_ENdU6os7tDPDmRHDWZJQSsNHFehhMcLKmc3ZOKB4u2gNV8J3CAeKjddOWjzznOxFLDo2RuXP22n9mx7lks5II4VauRk1G9jf86WnJs1OcTn8HR-6eHXlvel1LlU7A2E");'></div>
+</div>
+</div>
+</div>
+</header>
+<main class="relative h-screen w-full overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center aurora-gradient" data-alt="3D interactive map of a futuristic city with glowing accessibility pins" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB9NbRaWmwBDYS-QvSpnXVeuLYyh4nj_5enj-CT0QSYHRATFGeB_LmgLF77D8MP5_aciPinHsGfRWiexgSnvIkWsGc-hHVTn2WBuwEGRMrF8BgRWC_arjuE0ZY5F1px62h126HK4WW9ysVxNvFQYIpZuylryfOIGOVZ4jUs2E_FzQa05ex09jwir7fMiUx1uZkHw2089NsV3RQ-_1pl1Vn2OZohPxJfqBiNGYU3L2Cn7LtqfARIxH5c-P41HM1ei-7QcA91t0xBKBk"), radial-gradient(ellipse at 50% 0%, rgba(38, 70, 83, 0.4), transparent 70%), radial-gradient(ellipse at 50% 100%, rgba(115, 60, 108, 0.4), transparent 70%);'>
+</div>
+<div class="absolute top-24 left-4 sm:left-6 lg:left-10 z-10">
+<div class="flex flex-col gap-3">
+<button class="flex h-10 w-32 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-black/20 backdrop-blur-md border border-white/10 text-white shadow-lg transition-colors hover:bg-white/20">
+<p class="text-sm font-medium leading-normal">Accessibility</p>
+<span class="material-symbols-outlined text-base">expand_more</span>
+</button>
+<button class="flex h-10 w-32 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-black/20 backdrop-blur-md border border-white/10 text-white shadow-lg transition-colors hover:bg-white/20">
+<p class="text-sm font-medium leading-normal">Place Type</p>
+<span class="material-symbols-outlined text-base">expand_more</span>
+</button>
+<button class="flex h-10 w-32 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-black/20 backdrop-blur-md border border-white/10 text-white shadow-lg transition-colors hover:bg-white/20">
+<p class="text-sm font-medium leading-normal">Distance</p>
+<span class="material-symbols-outlined text-base">expand_more</span>
+</button>
+<button class="flex h-10 w-32 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-black/20 backdrop-blur-md border border-white/10 text-white shadow-lg transition-colors hover:bg-white/20">
+<p class="text-sm font-medium leading-normal">Rating</p>
+<span class="material-symbols-outlined text-base">expand_more</span>
+</button>
+</div>
+</div>
+<div class="absolute bottom-6 right-4 sm:right-6 lg:right-10 z-10 flex flex-col items-end gap-3">
+<div class="flex flex-col gap-0.5">
+<button class="flex size-12 items-center justify-center rounded-t-lg bg-black/20 backdrop-blur-md border border-white/10 shadow-lg text-white transition-colors hover:bg-white/20">
+<span class="material-symbols-outlined">add</span>
+</button>
+<button class="flex size-12 items-center justify-center rounded-b-lg bg-black/20 backdrop-blur-md border border-white/10 shadow-lg text-white transition-colors hover:bg-white/20">
+<span class="material-symbols-outlined">remove</span>
+</button>
+</div>
+<button class="flex size-12 items-center justify-center rounded-lg bg-black/20 backdrop-blur-md border border-white/10 shadow-lg text-white transition-colors hover:bg-white/20">
+<span class="material-symbols-outlined">my_location</span>
+</button>
+</div>
+<div class="absolute bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-sm md:max-w-md z-10">
+<div class="p-2">
+<div class="flex flex-col items-stretch justify-start rounded-xl bg-black/20 backdrop-blur-md border border-white/10 shadow-2xl transition-all duration-300 hover:shadow-primary/50 hover:border-primary/50">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-t-lg" data-alt="A modern art museum building with large glass windows" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBkXH8B0rq3LjAVgIMddjIJqf0UCyd-aIqDE6aw_71dkb0K6KuPW_6maB4SKKlCHWjm5l1ywr3lQd3yuVj9xGCO_mWw004P4x6IN51l3IdO9XuWP53ClG6o_j6iOJTXtI6uQgc_YqT2vRWwTr7jBf6XCb_C33kisFD7_xo0e_5kRy0fdC490vpqWGsrWqTFqGpcodCBcEKnjw5KhL1a_pcJJHOxQ48TZbGh1iFo_3S0_LLjsfubfrNuSvsoAWUkx9TslnFTY_UhFZQ");'></div>
+<div class="flex w-full grow flex-col items-stretch justify-center gap-2 p-4">
+<div class="flex justify-between items-start">
+<p class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">Museum of Modern Art</p>
+<div class="flex items-center gap-1 text-teal-400">
+<span class="material-symbols-outlined text-lg">star</span>
+<p class="text-white text-sm font-medium leading-normal">4.8</p>
+</div>
+</div>
+<p class="text-white/70 text-sm font-normal leading-normal">11 W 53rd St, New York</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="material-symbols-outlined text-green-400">check_circle</span>
+<p class="text-green-400 text-sm font-medium leading-normal">Fully Accessible</p>
+</div>
+<div class="flex items-center justify-between mt-3">
+<p class="text-white/60 text-xs font-light leading-normal italic">"Amazing collection and great ramps..."</p>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-primary text-white text-sm font-medium leading-normal shadow-lg shadow-primary/30 transition-all hover:bg-primary/90 hover:shadow-primary/50">
+<span class="truncate">View Route</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

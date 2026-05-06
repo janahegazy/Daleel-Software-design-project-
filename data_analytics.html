@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wheelchair Accessibility Map - Data Analytics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+        .aurora-gradient {
+            background-image: radial-gradient(at 20% 80%, hsla(217, 95%, 60%, 0.3), transparent 50%), radial-gradient(at 80% 20%, hsla(302, 83%, 71%, 0.3), transparent 50%), radial-gradient(at 50% 50%, hsla(160, 64%, 55%, 0.2), transparent 50%);
+        }
+        .glassmorphism {
+            background: rgba(44, 44, 44, 0.5);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#4A90E2",
+                        "secondary": "#7ED321",
+                        "accent": "#BD10E0",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#111418",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-dark font-display text-white">
+<div class="relative min-h-screen w-full flex flex-col overflow-x-hidden aurora-gradient">
+<!-- Header -->
+<header class="sticky top-0 z-50 px-4 sm:px-8 md:px-16 py-3 glassmorphism">
+<div class="max-w-screen-xl mx-auto flex items-center justify-between">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary text-3xl">accessible</span>
+<h1 class="text-white text-xl font-bold">Wheelchair Accessibility Map</h1>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-white hover:text-primary transition-colors" href="#">Map</a>
+<a class="text-primary font-bold" href="#">Analytics</a>
+<a class="text-white hover:text-primary transition-colors" href="#">Profile</a>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">search</span>
+<input class="bg-[#272f3a] border border-gray-700 rounded-lg pl-10 pr-4 py-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary/50" placeholder="Search places..." type="text"/>
+</div>
+<button class="p-2 rounded-full hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<img alt="User avatar" class="w-10 h-10 rounded-full border-2 border-primary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1jzMjJnhZlVGRL1oV9zlRpMvavh-g96REL3WyDk_zbnFmpyoDvZIjmS5oIxF9O1jau6SjzCC8inWViB2gMyTck67osR8v6B-J-UXhvIhkgyJsBr8vTGkEL4ReCS9SYeZmsyvx-OQafN-YX_3Js9imjVMYQC7w1B9pxtC1B3I5MYbVD88W2d21MfIFHbkmkKcbShQLMRdyAUdEqi2O-7YBAvg-n6WK0oBO0BMeQmp9sRnuKR6vgvn0KCOTL4FxJeUaJ2Q59DlvjgA"/>
+</div>
+</div>
+</header>
+<main class="flex-grow p-4 sm:p-8 md:p-16">
+<div class="max-w-screen-xl mx-auto">
+<!-- Page Header & Date Picker -->
+<div class="flex flex-wrap justify-between items-center gap-4 mb-8">
+<h2 class="text-4xl font-black tracking-tight">Regional Accessibility Analytics</h2>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 glassmorphism rounded-lg p-2">
+<button class="p-2 rounded-md hover:bg-white/10 transition-colors"><span class="material-symbols-outlined">chevron_left</span></button>
+<span class="font-bold">October 2023</span>
+<button class="p-2 rounded-md hover:bg-white/10 transition-colors"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+<button class="flex items-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold py-2 px-4 rounded-lg transition-colors">
+<span class="material-symbols-outlined">download</span>
+                            Export
+                        </button>
+</div>
+</div>
+<!-- Summary Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+<div class="glassmorphism rounded-xl p-6 shadow-lg">
+<p class="text-gray-300">Total Accessible Locations</p>
+<p class="text-3xl font-bold my-2">1,234</p>
+<p class="text-secondary font-medium flex items-center"><span class="material-symbols-outlined text-lg">trending_up</span>+10% vs last month</p>
+</div>
+<div class="glassmorphism rounded-xl p-6 shadow-lg">
+<p class="text-gray-300">Overall Accessibility Score</p>
+<p class="text-3xl font-bold my-2">4.5 <span class="text-xl text-gray-400">/ 5</span></p>
+<p class="text-secondary font-medium flex items-center"><span class="material-symbols-outlined text-lg">trending_up</span>+0.2 vs last month</p>
+</div>
+<div class="glassmorphism rounded-xl p-6 shadow-lg">
+<p class="text-gray-300">Accessibility Trend</p>
+<p class="text-3xl font-bold my-2">+5%</p>
+<p class="text-secondary font-medium flex items-center"><span class="material-symbols-outlined text-lg">trending_up</span>+2% vs last month</p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+<!-- Charts Column -->
+<div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Donut Chart -->
+<div class="glassmorphism rounded-xl p-6 shadow-lg flex flex-col">
+<h3 class="font-bold text-lg mb-4">Accessible vs. Non-Accessible</h3>
+<div class="flex-grow flex items-center justify-center relative">
+<svg class="transform -rotate-90" height="200" viewbox="0 0 120 120" width="200">
+<circle cx="60" cy="60" fill="none" r="54" stroke="#374151" stroke-width="12"></circle>
+<circle cx="60" cy="60" fill="none" r="54" stroke="url(#donutGradient)" stroke-dasharray="237.5 339.29" stroke-linecap="round" stroke-width="12"></circle>
+<defs>
+<lineargradient id="donutGradient" x1="0%" x2="0%" y1="0%" y2="100%">
+<stop offset="0%" stop-color="#4A90E2"></stop>
+<stop offset="100%" stop-color="#7ED321"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="text-4xl font-bold">70%</span>
+<span class="text-gray-400">Accessible</span>
+</div>
+</div>
+<div class="flex justify-center gap-6 mt-4">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-primary"></span>
+<span>Accessible</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-gray-700"></span>
+<span>Non-Accessible</span>
+</div>
+</div>
+</div>
+<!-- Bar Chart -->
+<div class="glassmorphism rounded-xl p-6 shadow-lg flex flex-col">
+<h3 class="font-bold text-lg mb-4">Ratings by Category</h3>
+<div class="flex-grow grid grid-cols-4 gap-4 items-end">
+<div class="text-center group">
+<div class="h-24 bg-gray-700 rounded-t-md relative overflow-hidden"><div class="absolute bottom-0 w-full bg-primary group-hover:bg-primary/80 transition-all duration-300" style="height: 80%;"></div></div>
+<p class="text-sm mt-2 text-gray-400">Food</p>
+</div>
+<div class="text-center group">
+<div class="h-24 bg-gray-700 rounded-t-md relative overflow-hidden"><div class="absolute bottom-0 w-full bg-primary group-hover:bg-primary/80 transition-all duration-300" style="height: 60%;"></div></div>
+<p class="text-sm mt-2 text-gray-400">Shops</p>
+</div>
+<div class="text-center group">
+<div class="h-24 bg-gray-700 rounded-t-md relative overflow-hidden"><div class="absolute bottom-0 w-full bg-primary group-hover:bg-primary/80 transition-all duration-300" style="height: 90%;"></div></div>
+<p class="text-sm mt-2 text-gray-400">Transit</p>
+</div>
+<div class="text-center group">
+<div class="h-24 bg-gray-700 rounded-t-md relative overflow-hidden"><div class="absolute bottom-0 w-full bg-primary group-hover:bg-primary/80 transition-all duration-300" style="height: 75%;"></div></div>
+<p class="text-sm mt-2 text-gray-400">Hotels</p>
+</div>
+</div>
+</div>
+<!-- Line Chart -->
+<div class="md:col-span-2 glassmorphism rounded-xl p-6 shadow-lg">
+<h3 class="font-bold text-lg mb-4">Accessibility Rating Trend</h3>
+<div class="h-56">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 500 200">
+<path d="M 0 150 Q 50 100, 100 120 T 200 80 T 300 130 T 400 100 T 500 50" fill="none" stroke="#4A90E2" stroke-width="3"></path>
+<path d="M 0 150 Q 50 100, 100 120 T 200 80 T 300 130 T 400 100 T 500 50 L 500 200 L 0 200 Z" fill="url(#lineGradient)"></path>
+<defs>
+<lineargradient id="lineGradient" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#4A90E2" stop-opacity="0.4"></stop>
+<stop offset="100%" stop-color="#4A90E2" stop-opacity="0"></stop>
+</lineargradient>
+</defs>
+</svg>
+</div>
+</div>
+</div>
+<!-- AI Report & Map -->
+<div class="lg:col-span-1 grid grid-cols-1 gap-6">
+<!-- AI Report -->
+<div class="glassmorphism rounded-xl p-6 shadow-lg bg-gradient-to-br from-accent/20 to-transparent">
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-accent text-2xl">auto_awesome</span>
+<h3 class="font-bold text-lg">AI-Powered Report</h3>
+</div>
+<p class="text-gray-300 mb-4">Accessibility in your region has improved by 5% this month, mainly driven by updates in public transit. Restaurants ratings are stable, but retail shops show a slight decline.</p>
+<a class="font-bold text-primary hover:underline" href="#">View Full Report →</a>
+</div>
+<!-- Map Snippet -->
+<div class="glassmorphism rounded-xl p-6 shadow-lg flex flex-col">
+<h3 class="font-bold text-lg mb-4">Accessibility Hotspots</h3>
+<div class="flex-grow rounded-lg overflow-hidden relative">
+<img alt="Map showing accessibility hotspots in a city." class="w-full h-full object-cover" data-location="City Map" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByrv-rQBDb3zNOMAiA9jlWetQsv399wGXyByz6ESlg3rARFJYY7lbFmsQSwEaKxXH3tF-58kJCK1E_ah-CU4_wWf_K_ka51iNeeweZR-G9jia8ECNqaBDDmqTjnyPCIxcpbMwsb8RJmR0mZmiMZkx5d7GGRJuDdmRqNLCFzOHlMm8OL9KTp-iToWXanQGD8yAdfBMbFrJpsW0Z86g4h2YYqXwcWiNp1XpbQX9PAIjGKnY-kKZId5SPmZwYNZqbS7T5SxvpVxPchak"/>
+<div class="absolute inset-0 bg-black/30"></div>
+<div class="absolute top-4 left-4 bg-secondary/80 text-white text-xs font-bold px-2 py-1 rounded-full">High Accessibility Zone</div>
+<div class="absolute bottom-4 right-4 bg-red-500/80 text-white text-xs font-bold px-2 py-1 rounded-full">Low Accessibility Zone</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Table View -->
+<div class="glassmorphism rounded-xl shadow-lg overflow-hidden">
+<div class="p-6">
+<h3 class="font-bold text-lg">Detailed Location Data</h3>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="border-b border-white/10">
+<tr>
+<th class="p-4 font-semibold">Location Name</th>
+<th class="p-4 font-semibold">Category</th>
+<th class="p-4 font-semibold">Accessibility Rating</th>
+<th class="p-4 font-semibold">Last Rated</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-white/10 hover:bg-white/5 transition-colors">
+<td class="p-4">Central City Library</td>
+<td class="p-4">Public Space</td>
+<td class="p-4 text-secondary font-medium">5.0</td>
+<td class="p-4 text-gray-400">2023-10-28</td>
+</tr>
+<tr class="border-b border-white/10 hover:bg-white/5 transition-colors">
+<td class="p-4">The Green Leaf Cafe</td>
+<td class="p-4">Restaurant</td>
+<td class="p-4 text-yellow-400 font-medium">4.2</td>
+<td class="p-4 text-gray-400">2023-10-25</td>
+</tr>
+<tr class="border-b border-white/10 hover:bg-white/5 transition-colors">
+<td class="p-4">Metro Station - Downtown</td>
+<td class="p-4">Public Transit</td>
+<td class="p-4 text-secondary font-medium">4.8</td>
+<td class="p-4 text-gray-400">2023-10-22</td>
+</tr>
+<tr class="hover:bg-white/5 transition-colors">
+<td class="p-4">Riverside Shopping Mall</td>
+<td class="p-4">Retail</td>
+<td class="p-4 text-orange-400 font-medium">3.5</td>
+<td class="p-4 text-gray-400">2023-10-20</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

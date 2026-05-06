@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wheelchair Accessibility Map - Authority Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0064fa",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0f1723",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0f1723;
+            background-image: radial-gradient(at 27% 37%, hsla(215, 98%, 43%, 0.1) 0px, transparent 50%), radial-gradient(at 97% 21%, hsla(286, 99%, 40%, 0.1) 0px, transparent 50%), radial-gradient(at 52% 99%, hsla(190, 99%, 45%, 0.1) 0px, transparent 50%);
+        }
+        .glassmorphism {
+            background: rgba(15, 23, 35, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="font-display text-white">
+<div class="flex h-screen bg-background-dark/80">
+<!-- Sidebar Navigation -->
+<aside class="flex flex-col w-64 bg-background-dark/50 p-4">
+<div class="flex items-center gap-3 mb-8">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Authority Representative Avatar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDZybqof2zdtMHVFuDYbT9GjKj4HOHYGghrYfdGlNspeCLWpurevamrnx2I_30CGzvjOM51irmp3ZAo8ZbTY6k70pwfCev7rEMqWVDVbOx2-wdvznXaSKmWa-iF5LUek8zNlc73-czD6JUXF_q6TOnFfLWA7UpLknHO6yveckCJQ-jHvFPleDD3tB8jaE5XLFOY2-WF81N5mlRL3-KUXdBwh4yhdLGjZUnFi5wXJtzJu0eAJr9ICceNpJPweeuVoopRJD2VTnewt88");'></div>
+<div class="flex flex-col">
+<h1 class="text-white text-base font-medium leading-normal">Authority Rep.</h1>
+<p class="text-gray-400 text-sm font-normal leading-normal">Municipality</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/20 text-primary" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10" href="#">
+<span class="material-symbols-outlined">map</span>
+<p class="text-sm font-medium leading-normal">Accessibility Heatmap</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10" href="#">
+<span class="material-symbols-outlined">trending_up</span>
+<p class="text-sm font-medium leading-normal">Progress Tracker</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10" href="#">
+<span class="material-symbols-outlined">description</span>
+<p class="text-sm font-medium leading-normal">Reports</p>
+</a>
+</nav>
+<div class="mt-auto">
+<button class="w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary/90 text-white font-bold py-2 px-4 rounded-lg">
+<span class="material-symbols-outlined">download</span>
+                    Export Insights
+                </button>
+<p class="text-gray-500 text-xs mt-2 text-center">All exported data is anonymized.</p>
+</div>
+</aside>
+<!-- Main Content -->
+<div class="flex-1 flex flex-col overflow-hidden">
+<!-- Top Navigation Bar -->
+<header class="flex items-center justify-between p-4 border-b border-white/10">
+<div class="flex items-center gap-4">
+<div class="size-6 text-primary">
+<svg fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L8 12v1c0 1.1.9 2 2 2v4.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"></path></svg>
+</div>
+<h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Wheelchair Accessibility Map</h2>
+</div>
+<div class="flex flex-1 justify-end items-center gap-6">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">search</span>
+<input class="form-input w-full pl-10 pr-4 py-2 rounded-lg bg-white/5 border-none focus:ring-2 focus:ring-primary placeholder:text-gray-400 text-white" placeholder="Search locations..." type="search"/>
+</div>
+<div class="relative">
+<button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBgKye5lHys4VYoXN8RaqcTtGOAAgFB171BUHvG-Np0y_HjQV7i5yrJAdVVLwaku674edhUrp_TP9Gfs7oWas1F4bF5IsjPHzLzbb4KLn12pFM8F8mDL-8e2N3_HiW2w4vQon5kKfT6ziG_6R2lQijv2bhnBr4otNLOM1j1gMAo6pLZOS2HyDfMVzCfZl_dWuD9PaGG9Gojo4gn21r9qtpliI2Zxa4ahzpZplgLeyHj5WX2rSB1Ge922aPuVE9qyDo88dV7vNpDlAY");'></div>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 overflow-y-auto p-6">
+<!-- Header -->
+<div class="flex flex-wrap justify-between items-center gap-4 mb-6">
+<div class="flex flex-col gap-1">
+<p class="text-white text-3xl font-bold leading-tight tracking-tighter">Welcome, Authority Representative</p>
+<p class="text-gray-400 text-base font-normal leading-normal">Here's an overview of the accessibility data in your region.</p>
+</div>
+</div>
+<!-- KPIs -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+<div class="flex flex-col gap-2 rounded-xl p-6 glassmorphism">
+<p class="text-gray-300 text-base font-medium leading-normal">Total Accessible Locations</p>
+<p class="text-white tracking-light text-3xl font-bold leading-tight">1,234</p>
+<p class="text-green-400 text-base font-medium leading-normal flex items-center gap-1"><span class="material-symbols-outlined text-base">arrow_upward</span>+12%</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 glassmorphism">
+<p class="text-gray-300 text-base font-medium leading-normal">Average Accessibility Rating</p>
+<p class="text-white tracking-light text-3xl font-bold leading-tight">4.5 <span class="text-lg">/ 5</span></p>
+<p class="text-green-400 text-base font-medium leading-normal flex items-center gap-1"><span class="material-symbols-outlined text-base">arrow_upward</span>+0.2</p>
+</div>
+<div class="flex flex-col gap-2 rounded-xl p-6 glassmorphism">
+<p class="text-gray-300 text-base font-medium leading-normal">New Ratings This Month</p>
+<p class="text-white tracking-light text-3xl font-bold leading-tight">56</p>
+<p class="text-green-400 text-base font-medium leading-normal flex items-center gap-1"><span class="material-symbols-outlined text-base">arrow_upward</span>+8%</p>
+</div>
+</div>
+<!-- Map and Charts -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+<div class="lg:col-span-2 rounded-xl glassmorphism p-4">
+<h3 class="text-lg font-bold mb-4 px-2">Accessibility Heatmap</h3>
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="Interactive map showing accessibility heatmap of a city" data-location="Anytown" style='background-image: url("https://placeholder.pics/svg/300");'></div>
+</div>
+<div class="rounded-xl glassmorphism p-6 flex flex-col">
+<h3 class="text-lg font-bold mb-4">Rating Breakdown</h3>
+<div class="flex-grow flex items-center justify-center">
+<img class="max-w-full h-auto" data-alt="Donut chart showing breakdown of accessibility ratings: 50% Excellent, 30% Good, 20% Needs Improvement" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXYyY5rNVUXiPWdzLaYT_QZhX7IlhykfQE9cc-6l3Tl-BSNdAfQp58zlG16U6z4_0TXJ_RLtoBcZGFzzU7c-U6dJ-rdmmJ7vudMVaNZoUPUYBRKtR3kGqv7a4BLMZ62LQPZXwgT6v4fif1gWgUI3Au_WicRFZlqUeyB9upcoeM_GA4h_9Dk4Wzs6glbK-uT6kLj_ZhS8jbUHL_6gnfYW7xWxQOCNmXr8ssk2EO7xkg_5OuOzLR_EmTsajnTgnke7OxVUZTDZ9-xzQ"/>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+<div class="rounded-xl glassmorphism p-6">
+<h3 class="text-lg font-bold mb-4">Accessibility Improvement Trend</h3>
+<img class="w-full" data-alt="Line chart showing a positive trend of accessibility improvements over the last 12 months" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkJx34mk4U-udoaddHiIZcksLVkkVZSl01Q4HeKLpHFOKMCVBjA-gCgFK-svu9OPmFp4SKLkpy0WMAsIJ9d7xvaElyHUF-QTQrSOcLoTldAeVsu-GZrvIMP4smmPq7ii-pIbQkjrQt9gy_50oeI1KBMoQUKuJyajUha2xMPI4GxZQBkLENqLul_ARLVL6FMQvFVOQsVAcIsYyewV_b9tIBcXobrXEupdSH26SlqMp7Qdhe2pKk7zM82DaADgXKemJGHI4RYoR0lBE"/>
+</div>
+<div class="rounded-xl glassmorphism p-6">
+<h3 class="text-lg font-bold mb-4">Scores by District</h3>
+<img class="w-full" data-alt="Bar chart comparing accessibility scores across five different districts, with District C having the highest score" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALpH1ILsJ6PKIZI5pwTurtMPgDHM8XR6AuGuMmZsIpyc_BwlKLL1TY50fQIUZzB2Kk88y67YpzcOyQ1nuep_28B3XARYPYsXGhCLwH68K3NVkaerWlWAjoujXWGUx2maHK6gv4_nWTv6ah3VH7Sz69IyIew4v0QGelFmJWywIZHKtKkwWsYLEzPvNGmot4D13r-TJY-PJc1amWEI9JGvTqy6ONNSiqrYD-dwVptBdVliF9-oPTOVbBTNjV7WKuSWDmG9bk__K4f4w"/>
+</div>
+</div>
+<!-- Recent Reports -->
+<div class="rounded-xl glassmorphism p-6">
+<h3 class="text-lg font-bold mb-4">Recent Reports</h3>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="border-b border-white/20">
+<th class="p-3 text-sm font-semibold text-gray-300">Report Name</th>
+<th class="p-3 text-sm font-semibold text-gray-300">Date Generated</th>
+<th class="p-3 text-sm font-semibold text-gray-300">Generated By</th>
+<th class="p-3 text-sm font-semibold text-gray-300 text-right">Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-white/10">
+<td class="p-3 text-sm">Q4 2024 Accessibility Summary</td>
+<td class="p-3 text-sm text-gray-400">2024-10-01</td>
+<td class="p-3 text-sm text-gray-400">You</td>
+<td class="p-3 text-sm text-right">
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined">visibility</span></button>
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined">download</span></button>
+</td>
+</tr>
+<tr class="border-b border-white/10">
+<td class="p-3 text-sm">Downtown District Analysis</td>
+<td class="p-3 text-sm text-gray-400">2024-09-15</td>
+<td class="p-3 text-sm text-gray-400">You</td>
+<td class="p-3 text-sm text-right">
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined">visibility</span></button>
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined">download</span></button>
+</td>
+</tr>
+<tr>
+<td class="p-3 text-sm">Monthly Review - August</td>
+<td class="p-3 text-sm text-gray-400">2024-09-01</td>
+<td class="p-3 text-sm text-gray-400">You</td>
+<td class="p-3 text-sm text-right">
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined">visibility</span></button>
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined">download</span></button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Wheelchair Accessibility Map - Recommendations</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0667f9",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0f1723",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-image: linear-gradient(120deg, #0f1723 0%, #0c1a2d 25%, #0f1723 50%, #1a223e 75%, #0f1723 100%);
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-white/10 px-6 md:px-10 lg:px-20 py-4 bg-background-dark/80 backdrop-blur-sm">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl">accessible</span>
+<h2 class="text-white text-xl font-bold leading-tight tracking-[-0.015em]">Wheelchair Accessibility Map</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-white/80 hover:text-white text-sm font-medium leading-normal" href="#">Home</a>
+<a class="text-white hover:text-white/80 text-sm font-medium leading-normal" href="#">Explore</a>
+<a class="text-white/80 hover:text-white text-sm font-medium leading-normal" href="#">Favorites</a>
+<a class="text-white/80 hover:text-white text-sm font-medium leading-normal" href="#">Profile</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Login</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-white/10 hover:bg-white/20 text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Sign Up</span>
+</button>
+</div>
+</header>
+<main class="px-6 md:px-10 lg:px-20 py-10 flex-1">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-wrap justify-between items-center gap-4 mb-8">
+<div class="flex min-w-72 flex-col gap-2">
+<p class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">Intelligent Suggestions for You</p>
+<p class="text-white/60 text-base font-normal leading-normal">Hello, Alex! Here are some accessible places you might like, based on your activity.</p>
+</div>
+<div class="flex gap-3">
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white/10 px-4">
+<span class="material-symbols-outlined text-white/80 text-lg">filter_list</span>
+<p class="text-white text-sm font-medium leading-normal">Category</p>
+<span class="material-symbols-outlined text-white/80 text-lg">expand_more</span>
+</button>
+<button class="flex h-10 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-white/10 px-4">
+<span class="material-symbols-outlined text-white/80 text-lg">swap_vert</span>
+<p class="text-white text-sm font-medium leading-normal">Sort by: Recommended</p>
+<span class="material-symbols-outlined text-white/80 text-lg">expand_more</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+<!-- Recommendation Card 1 -->
+<div class="bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-lg shadow-2xl shadow-black/20 hover:border-primary/50 transition-all duration-300 group">
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-white text-lg font-bold leading-tight">Artisan's Corner Cafe</p>
+<p class="text-white/60 text-sm font-normal">Restaurant</p>
+</div>
+<div class="relative group/tooltip">
+<span class="material-symbols-outlined text-white/50 cursor-pointer">help_outline</span>
+<div class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 w-48 bg-background-dark border border-white/20 p-2 rounded-lg text-xs text-center text-white/80 opacity-0 group-hover/tooltip:opacity-100 transition-opacity pointer-events-none">
+                                            Based on your frequent visits to cafes.
+                                        </div>
+</div>
+</div>
+<div class="w-full h-40 bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="A bright and modern cafe interior with wide aisles" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCT5PBcNL27SwtSOfFr-UHI4OACcIR0HjkqdAgO9XiWH-M8IqAehJZfuv4phyoPCYbATpz4NcZGqHVog8V-E_TjQWf0JCiflu1a21X_zHSt0GkahvtyIzYeGK22LpA54C-KczF5OPhQ8k69VvryqxQP1vTCXM3zlgJ9D3Do0Tg-G875Z5-UVoX4P0Jb0T1WvpP9QkxJ7rgUcAArAGqOLaEbzUnzXwOb3h50i8Cbdj3FPdvEKPaLxHN-q7gpVZMyKpkir-Kk_VTwYso");'></div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">ramp_right</span>
+<span class="material-symbols-outlined text-primary text-xl">accessible_forward</span>
+<span class="material-symbols-outlined text-primary text-xl">door_open</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-400 text-lg">star</span>
+<span class="material-symbols-outlined text-yellow-400 text-lg">star</span>
+<span class="material-symbols-outlined text-yellow-400 text-lg">star</span>
+<span class="material-symbols-outlined text-yellow-400 text-lg">star</span>
+<span class="material-symbols-outlined text-white/30 text-lg">star</span>
+</div>
+<p class="text-white/60 text-sm">1.2 miles away</p>
+</div>
+<div class="flex gap-3 mt-2">
+<button class="flex-1 flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] gap-2">
+<span class="material-symbols-outlined text-base">near_me</span>
+<span class="truncate">Get Directions</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-white/10 hover:bg-white/20 text-white text-sm font-bold leading-normal tracking-[0.015em] gap-2">
+<span class="material-symbols-outlined text-base">bookmark_border</span>
+<span class="truncate">Save</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Recommendation Card 2 -->
+<div class="bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-lg shadow-2xl shadow-black/20 hover:border-primary/50 transition-all duration-300 group">
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-white text-lg font-bold leading-tight">City Central Park</p>
+<p class="text-white/60 text-sm font-normal">Park</p>
+</div>
+<div class="relative group/tooltip">
+<span class="material-symbols-outlined text-white/50 cursor-pointer">help_outline</span>
+<div class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 w-48 bg-background-dark border border-white/20 p-2 rounded-lg text-xs text-center text-white/80 opacity-0 group-hover/tooltip:opacity-100 transition-opacity pointer-events-none">
+                                            Similar to your favorite spot, "Greenwood Park".
+                                        </div>
+</div>
+</div>
+<div class="w-full h-40 bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="A paved pathway through a lush green park on a sunny day." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBYcKMdsvY443QrIPV_yl-6sKhpITIFo3jJ91AUdYq6qcYH9XJTeeToNmXBntB5lED4Itdxf3crym7wHEuS5ddE2QGwVCFsG9LJ0FGCpfzmUeO8qVfbk70BIbW361AkSnNB3fTYzn0QNPXqJK_IneERmdKfmBSfx0ZzGDVS4o-cnh9UtzXfYgVOkwvuPCbClFtWULCX98uYGs8KCIKVhJb1DBydnZacIenV4ZpxfAAdwjvqfdqpHUseHB5WlNMG-gIfnOaHV9AHeUw");'></div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">wheelchair_pickup</span>
+<span class="material-symbols-outlined text-primary text-xl">wc</span>
+<span class="material-symbols-outlined text-primary text-xl">signpost</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-400 text-lg">star</span>
+<span class="material-symbols-outlined text-yellow-400 text-lg">star</span>
+<span class="material-symbols-outlined text-yellow-400 text-lg">star</span>
+<span class="material-symbols-outlined text-yellow-400 text-lg">star_half</span>
+<span class="material-symbols-outlined text-white/30 text-lg">star</span>
+</div>
+<p class="text-white/60 text-sm">3.5 miles away</p>
+</div>
+<div class="flex gap-3 mt-2">
+<button class="flex-1 flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] gap-2">
+<span class="material-symbols-outlined text-base">near_me</span>
+<span class="truncate">Get Directions</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-white/10 hover:bg-white/20 text-white text-sm font-bold leading-normal tracking-[0.015em] gap-2">
+<span class="material-symbols-outlined text-base">bookmark_border</span>
+<span class="truncate">Save</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Recommendation Card 3 -->
+<div class="bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-lg shadow-2xl shadow-black/20 hover:border-primary/50 transition-all duration-300 group">
+<div class="flex flex-col gap-4">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-white text-lg font-bold leading-tight">Metro Line 2</p>
+<p class="text-white/60 text-sm font-normal">Public Transport</p>
+</div>
+<div class="relative group/tooltip">
+<span class="material-symbols-outlined text-white/50 cursor-pointer">help_outline</span>
+<div class="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 w-48 bg-background-dark border border-white/20 p-2 rounded-lg text-xs text-center text-white/80 opacity-0 group-hover/tooltip:opacity-100 transition-opacity pointer-events-none">
+                                            A highly rated route for accessibility.
+                                        </div>
+</div>
+</div>
+<div class="w-full h-40 bg-center bg-no-repeat aspect-video bg-cover rounded-lg" data-alt="A modern subway station with clear accessibility signage." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDqXjJDCqZwPrVPGvKdL8hLFDAIjKjeXpKu1GaOv4so8VEV_-f0maA4QYLcIouZQ9yafZdnHSWxv3KBHtEGSOCXZwFflBHaXPOT9JdOAgqF8qRG-FvJq7yzFzufk2-V3kQ761Gr0PV0wfkm8CBpyMOEHLfDp05ridgkEpV4ZlMprANa6vb3PD9peiAviEPnSxNZ2khudacJQ5Bb4rfHH__rrnK8NLyRpvy--lySsAIw_jcgIeHducku9aj9oT-v6wblSGYdVyzUjCg");'></div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">elevator</span>
+<span class="material-symbols-outlined text-primary text-xl">ramp_right</span>
+<span class="material-symbols-outlined text-primary text-xl">audio_description</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-yellow-400 text-lg">star</span>
+<span class="material-symbols-outlined text-yellow-400 text-lg">star</span>
+<span class="material-symbols-outlined text-yellow-400 text-lg">star</span>
+<span class="material-symbols-outlined text-yellow-400 text-lg">star</span>
+<span class="material-symbols-outlined text-yellow-400 text-lg">star</span>
+</div>
+<p class="text-white/60 text-sm">Frequent Route</p>
+</div>
+<div class="flex gap-3 mt-2">
+<button class="flex-1 flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] gap-2">
+<span class="material-symbols-outlined text-base">near_me</span>
+<span class="truncate">View Route</span>
+</button>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-white/10 hover:bg-white/20 text-white text-sm font-bold leading-normal tracking-[0.015em] gap-2">
+<span class="material-symbols-outlined text-base">bookmark_border</span>
+<span class="truncate">Save</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Loading State example -->
+<div class="mt-12 text-center text-white/60">
+<p>Have more recommendations for you...</p>
+<div class="flex justify-center items-center gap-2 mt-4">
+<div class="w-3 h-3 bg-primary rounded-full animate-pulse [animation-delay:-0.3s]"></div>
+<div class="w-3 h-3 bg-primary rounded-full animate-pulse [animation-delay:-0.15s]"></div>
+<div class="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Admin Panel - Wheelchair Accessibility Map</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0667f9",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0f1723",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-white">
+<div class="relative flex min-h-screen w-full">
+<!-- Aurora Background -->
+<div class="absolute inset-0 z-0 overflow-hidden">
+<div class="absolute top-0 -left-1/4 w-1/2 h-1/2 bg-primary/20 rounded-full filter blur-3xl opacity-50 animate-pulse"></div>
+<div class="absolute bottom-0 -right-1/4 w-1/2 h-1/2 bg-pink-500/20 rounded-full filter blur-3xl opacity-50 animate-pulse animation-delay-4000"></div>
+</div>
+<div class="relative flex h-full grow">
+<!-- SideNavBar -->
+<aside class="w-64 flex-shrink-0 p-4">
+<div class="flex flex-col h-full bg-black/20 backdrop-blur-xl rounded-xl border border-white/10 p-4 shadow-soft">
+<div class="flex items-center gap-3 mb-8">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="Admin Panel logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCc8TAe5aHgFw012-AJbb2a3tZnPto-u8JJdYfAo3TjEZeXg6N4nWxO9MNgYyQkUUdpjiVVFLwIRxItYNazalpZ8agFx89A0QsyUbAUuEDAQNF_OaVTNKQ_8foXQKJlVmTd7krdaVWe59lf76Uf3sOfzSuSOVcTY2a1N4FjFpDwSP2-7qIO9xM0O46LeP1GA-yUwczO-lzUqRz9i7j7081wkbcYxfrrcn6VbPxzRgK0xJrYd2jJvLAUpwBSexOZwF2szf_axCTO4fM");'></div>
+<div class="flex flex-col">
+<h1 class="text-white text-base font-medium leading-normal">Admin Panel</h1>
+<p class="text-gray-400 text-sm font-normal leading-normal">Wheelchair Accessibility Map</p>
+</div>
+</div>
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-white/70 hover:bg-primary/20 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<p class="text-sm font-medium leading-normal">Dashboard</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary text-white transition-colors" href="#">
+<span class="material-symbols-outlined">rate_review</span>
+<p class="text-sm font-medium leading-normal">Reviews</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-white/70 hover:bg-primary/20 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">flag</span>
+<p class="text-sm font-medium leading-normal">Reports</p>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-white/70 hover:bg-primary/20 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<p class="text-sm font-medium leading-normal">Settings</p>
+</a>
+</nav>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-4">
+<div class="flex flex-col gap-6 h-full">
+<!-- Page Heading -->
+<header class="flex flex-wrap justify-between items-center gap-3">
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em]">Manage Reviews</h1>
+</header>
+<!-- Search and Filters -->
+<div class="flex flex-col md:flex-row gap-4">
+<div class="flex-1">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-lg h-full bg-black/20 backdrop-blur-xl border border-white/10 shadow-soft">
+<div class="text-gray-400 flex items-center justify-center pl-4">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-lg text-white focus:outline-0 focus:ring-0 border-none bg-transparent h-full placeholder:text-gray-400 px-4 text-base font-normal leading-normal" placeholder="Search by keyword, user, or location" value=""/>
+</div>
+</label>
+</div>
+<div class="flex gap-3">
+<button class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-black/20 backdrop-blur-xl border border-white/10 shadow-soft pl-4 pr-2">
+<p class="text-white text-sm font-medium leading-normal">Status</p>
+<span class="material-symbols-outlined">arrow_drop_down</span>
+</button>
+<button class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-black/20 backdrop-blur-xl border border-white/10 shadow-soft pl-4 pr-2">
+<p class="text-white text-sm font-medium leading-normal">Date Range</p>
+<span class="material-symbols-outlined">arrow_drop_down</span>
+</button>
+<button class="flex h-12 shrink-0 items-center justify-center gap-x-2 rounded-lg bg-black/20 backdrop-blur-xl border border-white/10 shadow-soft pl-4 pr-2">
+<p class="text-white text-sm font-medium leading-normal">Location Type</p>
+<span class="material-symbols-outlined">arrow_drop_down</span>
+</button>
+</div>
+</div>
+<!-- Table -->
+<div class="flex-1 @container overflow-hidden bg-black/20 backdrop-blur-xl rounded-xl border border-white/10 shadow-soft">
+<div class="overflow-x-auto">
+<table class="w-full">
+<thead class="border-b border-white/10">
+<tr>
+<th class="px-6 py-4 text-left text-gray-400 text-sm font-medium">Reviewer</th>
+<th class="px-6 py-4 text-left text-gray-400 text-sm font-medium">Location</th>
+<th class="px-6 py-4 text-left text-gray-400 text-sm font-medium">Date Submitted</th>
+<th class="px-6 py-4 text-left text-gray-400 text-sm font-medium">Content Preview</th>
+<th class="px-6 py-4 text-left text-gray-400 text-sm font-medium">Status</th>
+<th class="px-6 py-4 text-left text-gray-400 text-sm font-medium">Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-white/10 hover:bg-white/5 transition-colors">
+<td class="px-6 py-4 text-white text-sm font-normal">Alex Doe</td>
+<td class="px-6 py-4 text-gray-300 text-sm font-normal">Central Park Cafe</td>
+<td class="px-6 py-4 text-gray-300 text-sm font-normal">2023-10-27</td>
+<td class="px-6 py-4 text-gray-300 text-sm font-normal max-w-xs truncate">Great ramp access, but the doors are a bit heavy...</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-500/20 text-yellow-300">Pending</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-green-500/20 group" title="Approve"><span class="material-symbols-outlined text-green-400 group-hover:text-green-300">check_circle</span></button>
+<button class="p-2 rounded-full hover:bg-red-500/20 group" title="Reject"><span class="material-symbols-outlined text-red-400 group-hover:text-red-300">cancel</span></button>
+<button class="p-2 rounded-full hover:bg-blue-500/20 group" title="Edit"><span class="material-symbols-outlined text-blue-400 group-hover:text-blue-300">edit</span></button>
+<button class="p-2 rounded-full hover:bg-gray-500/20 group" title="Delete"><span class="material-symbols-outlined text-gray-400 group-hover:text-gray-300">delete</span></button>
+</div>
+</td>
+</tr>
+<tr class="border-b border-white/10 hover:bg-white/5 transition-colors">
+<td class="px-6 py-4 text-white text-sm font-normal">Brenda Smith</td>
+<td class="px-6 py-4 text-gray-300 text-sm font-normal">City Museum</td>
+<td class="px-6 py-4 text-gray-300 text-sm font-normal">2023-10-26</td>
+<td class="px-6 py-4 text-gray-300 text-sm font-normal max-w-xs truncate">Elevators were spacious and easy to operate. All...</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-500/20 text-green-300">Approved</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-red-500/20 group" title="Reject"><span class="material-symbols-outlined text-red-400 group-hover:text-red-300">cancel</span></button>
+<button class="p-2 rounded-full hover:bg-blue-500/20 group" title="Edit"><span class="material-symbols-outlined text-blue-400 group-hover:text-blue-300">edit</span></button>
+<button class="p-2 rounded-full hover:bg-gray-500/20 group" title="Delete"><span class="material-symbols-outlined text-gray-400 group-hover:text-gray-300">delete</span></button>
+</div>
+</td>
+</tr>
+<tr class="border-b border-white/10 hover:bg-white/5 transition-colors">
+<td class="px-6 py-4 text-white text-sm font-normal">Charles Brown</td>
+<td class="px-6 py-4 text-gray-300 text-sm font-normal">Public Library</td>
+<td class="px-6 py-4 text-gray-300 text-sm font-normal">2023-10-25</td>
+<td class="px-6 py-4 text-gray-300 text-sm font-normal max-w-xs truncate">The accessible restroom was out of order. Staff was...</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-500/20 text-red-300">Rejected</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-green-500/20 group" title="Approve"><span class="material-symbols-outlined text-green-400 group-hover:text-green-300">check_circle</span></button>
+<button class="p-2 rounded-full hover:bg-blue-500/20 group" title="Edit"><span class="material-symbols-outlined text-blue-400 group-hover:text-blue-300">edit</span></button>
+<button class="p-2 rounded-full hover:bg-gray-500/20 group" title="Delete"><span class="material-symbols-outlined text-gray-400 group-hover:text-gray-300">delete</span></button>
+</div>
+</td>
+</tr>
+<tr class="border-b border-white/10 hover:bg-white/5 transition-colors">
+<td class="px-6 py-4 text-white text-sm font-normal">Diana Prince</td>
+<td class="px-6 py-4 text-gray-300 text-sm font-normal">Main Street Theatre</td>
+<td class="px-6 py-4 text-gray-300 text-sm font-normal">2023-10-24</td>
+<td class="px-6 py-4 text-gray-300 text-sm font-normal max-w-xs truncate">No designated wheelchair seating available. Had to...</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-500/20 text-yellow-300">Pending</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-green-500/20 group" title="Approve"><span class="material-symbols-outlined text-green-400 group-hover:text-green-300">check_circle</span></button>
+<button class="p-2 rounded-full hover:bg-red-500/20 group" title="Reject"><span class="material-symbols-outlined text-red-400 group-hover:text-red-300">cancel</span></button>
+<button class="p-2 rounded-full hover:bg-blue-500/20 group" title="Edit"><span class="material-symbols-outlined text-blue-400 group-hover:text-blue-300">edit</span></button>
+<button class="p-2 rounded-full hover:bg-gray-500/20 group" title="Delete"><span class="material-symbols-outlined text-gray-400 group-hover:text-gray-300">delete</span></button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-white/5 transition-colors">
+<td class="px-6 py-4 text-white text-sm font-normal">Ethan Hunt</td>
+<td class="px-6 py-4 text-gray-300 text-sm font-normal">Riverfront Restaurant</td>
+<td class="px-6 py-4 text-gray-300 text-sm font-normal">2023-10-23</td>
+<td class="px-6 py-4 text-gray-300 text-sm font-normal max-w-xs truncate">The outdoor patio is not accessible, which was a...</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-500/20 text-green-300">Approved</span>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-red-500/20 group" title="Reject"><span class="material-symbols-outlined text-red-400 group-hover:text-red-300">cancel</span></button>
+<button class="p-2 rounded-full hover:bg-blue-500/20 group" title="Edit"><span class="material-symbols-outlined text-blue-400 group-hover:text-blue-300">edit</span></button>
+<button class="p-2 rounded-full hover:bg-gray-500/20 group" title="Delete"><span class="material-symbols-outlined text-gray-400 group-hover:text-gray-300">delete</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+<!-- Modal for editing/confirmation (example) -->
+<div class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center hidden" id="edit-modal">
+<div class="bg-background-dark/80 backdrop-blur-xl border border-white/10 rounded-xl p-8 max-w-lg w-full shadow-soft">
+<h2 class="text-2xl font-bold mb-4">Edit Review</h2>
+<p class="text-gray-300 mb-6">Editing review for "Central Park Cafe" by Alex Doe.</p>
+<textarea class="w-full h-32 p-3 rounded-lg bg-black/20 border border-white/10 text-white placeholder-gray-400 focus:ring-primary focus:border-primary">Great ramp access, but the doors are a bit heavy...</textarea>
+<div class="flex justify-end gap-4 mt-6">
+<button class="px-6 py-2 rounded-lg text-white bg-gray-600 hover:bg-gray-500 transition-colors" onclick="document.getElementById('edit-modal').classList.add('hidden')">Cancel</button>
+<button class="px-6 py-2 rounded-lg text-white bg-primary hover:bg-primary/80 transition-colors">Save Changes</button>
+</div>
+</div>
+</div>
+</body></html>
